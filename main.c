@@ -1,15 +1,28 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#ifdef _WIN32               // Sleeping (Pause) function
-#include <Windows.h>        // For Windows
-#else
-#include <unistd.h>         // And linux
+#ifdef __unix__
+# include <unistd.h>
+#elif defined _WIN32
+# include <windows.h>
+#define sleep(x) Sleep(1000 * x)
 #endif
 
 //inclusion of other .c files//
 //#include "DrawBoard.c"
 //#include "MapGenerator.c
+#define MAX_LEN 128
+
+void AsciiArtPrinter(FILE *fptr)
+{
+    char read_string[MAX_LEN];
+
+    while(fgets(read_string,sizeof(read_string),fptr) != NULL)
+        printf("%s",read_string);
+
+        printf("\n");
+}
+
 
 void MapGenerator(int NumbOfRws, int NumbOfCol, int FishArray[500][500]){
     srand(time(NULL));         // Generator of number of fishes
@@ -35,13 +48,34 @@ printf("\n");
 
 int main()
 {
-PlaySound("penguins.wav", NULL, SND_ASYNC); // Plays sound file; need to add winmm in Settings -> Compiler ->
-                                            //                                              ->Linker Settings
+    //fun part start//
+PlaySound("resources/penguins.wav", NULL, SND_ASYNC); // Plays sound file; need to add winmm in Settings -> Compiler ->                                      //                                              ->Linker Settings
+char *filename = "resources/penguinsgalore.txt";
+    FILE *fptr = NULL;
+    if((fptr = fopen(filename,"r")) == NULL)
+    {
+        fprintf(stderr,"error opening %s\n",filename);
+        return 1;
+    }
+    AsciiArtPrinter(fptr);
+    fclose(fptr);
+    char *filename2 = "resources/peng.txt";
+    FILE *fptr2 = NULL;
+    if((fptr2 = fopen(filename2,"r")) == NULL)
+    {
+        fprintf(stderr,"error opening %s\n",filename);
+        return 1;
+    }
+    AsciiArtPrinter(fptr2);
+    fclose(fptr2);
+Sleep(1000);
+//fun part end//
+
 
     // initializations//
     int NumberOfRows,NumberOfColumns;
   //Taking data from user//
-printf("Enter NumberOfRows: \n");
+printf("\nEnter NumberOfRows: \n");
 scanf("%i", &NumberOfRows);
 printf("Enter NumberOfColumns: \n");
 scanf("%i", &NumberOfColumns);
@@ -54,7 +88,7 @@ scanf("%i", &NumberOfColumns);
                 FishArray[i][j]=0;
             }
     }
-//Sleep(1000);
+
 
 MapGenerator(NumberOfRows, NumberOfColumns, FishArray);
 DrawBoard(NumberOfRows, NumberOfColumns, FishArray);
