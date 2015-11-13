@@ -6,6 +6,7 @@
 #else
 #include <unistd.h>         // And linux
 #endif
+
 //inclusion of other .c files//
 //#include "DrawBoard.c"
 //#include "MapGenerator.c
@@ -34,6 +35,9 @@ printf("\n");
 
 int main()
 {
+PlaySound("penguins.wav", NULL, SND_ASYNC); // Plays sound file; need to add winmm in Settings -> Compiler ->
+                                            //                                              ->Linker Settings
+
     // initializations//
     int NumberOfRows,NumberOfColumns;
   //Taking data from user//
