@@ -9,8 +9,7 @@
 //inclusion of other .c files//
 //#include "DrawBoard.c"
 //#include "MapGenerator.c
-//MapGenerator - needs to be rewritten as function to MapGenerator.c//
-void MapGenerator(int FishArray, int NumbOfRws, int NumbOfCol){
+void MapGenerator(int NumbOfRws, int NumbOfCol, int FishArray){
     srand(time(NULL));         // Generator of number of fishes
     int i,j;
     for (i=0;i<NumbOfRws;i++) {
@@ -20,11 +19,7 @@ void MapGenerator(int FishArray, int NumbOfRws, int NumbOfCol){
             }
 }
 }
-//PlacePenguin - needs to be rewritten as function to PlacePenguin.c//
-
-
-//MixedDrawBoard - needs to be rewritten as function to DrawBoard.c//
-void DrawBoard(int FishArray, int NumOfRows, int NumOfCol){
+void DrawBoard(const int NumOfRows, int NumOfCol, int FishArray){
 int i,j;
 for (i=0;i<NumOfRows;i++) {
 if(i%2!=0) printf(" ");
@@ -38,25 +33,21 @@ printf("\n");
 
 int main()
 {
-
-//Taking data from user//
-
     // initializations//
-    int NumberOfRows,NumberOfColumns,NumberOfPenguins;
-    int FishArray[NumberOfRows][NumberOfColumns];
-    char PenguinArray[NumberOfRows][NumberOfColumns];
-
-
+    int NumberOfRows,NumberOfColumns;
+  //Taking data from user//
 printf("Enter NumberOfRows: \n");
 scanf("%i", &NumberOfRows);
 printf("Enter NumberOfColumns: \n");
 scanf("%i", &NumberOfColumns);
-printf("Enter NumberOfPenguins: \n");
-scanf("%i", &NumberOfPenguins);
+
+    int FishArray[NumberOfRows][NumberOfColumns];
+
+
 //Sleep(1000);
 
-MapGenerator(FishArray, NumberOfRows, NumberOfColumns);
-DrawBoard(FishArray, NumberOfRows, NumberOfColumns);
+MapGenerator(NumberOfRows, NumberOfColumns, FishArray);
+DrawBoard(NumberOfRows, NumberOfColumns, FishArray);
 }
 
 
