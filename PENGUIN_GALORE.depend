@@ -27,12 +27,12 @@
 
 1447336650 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\generateboard.c
 
-1447451821 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.c
+1447445284 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.c
 	<stdio.h>
 	<time.h>
 	<stdlib.h>
+	<Windows.h>
 	<unistd.h>
-	<windows.h>
 
 1447336658 d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\drawboard.c
 
