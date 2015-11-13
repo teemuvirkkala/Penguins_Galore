@@ -8,13 +8,13 @@
 #endif
 //inclusion of other .c files//
 //#include "DrawBoard.c"
-//#include "MapGenerator.c"
+//#include "MapGenerator.c
 //MapGenerator - needs to be rewritten as function to MapGenerator.c//
-void MapGenerator(int FishArray, int NumberOfRows, int NumberOfColumns){
+void MapGenerator(int FishArray, int NumbOfRws, int NumbOfCol){
     srand(time(NULL));         // Generator of number of fishes
     int i,j;
-    for (i=0;i<NumberOfRows;i++) {
-        for(j=0;j<NumberOfColumns;j++)
+    for (i=0;i<NumbOfRws;i++) {
+        for(j=0;j<NumbOfCol;j++)
             {
                 FishArray[i][j]=(rand()%3)+1;
             }
@@ -24,11 +24,11 @@ void MapGenerator(int FishArray, int NumberOfRows, int NumberOfColumns){
 
 
 //MixedDrawBoard - needs to be rewritten as function to DrawBoard.c//
-void DrawBoard(int FishArray, int NumberOfRows, int NumberOfColumns){
+void DrawBoard(int FishArray, int NumOfRows, int NumOfCol){
 int i,j;
-for (i=0;i<NumberOfRows;i++) {
+for (i=0;i<NumOfRows;i++) {
 if(i%2!=0) printf(" ");
-        for(j=0;j<NumberOfColumns;j++)
+        for(j=0;j<NumOfCol;j++)
         {
            printf("%i ", FishArray[i][j]);
         }
