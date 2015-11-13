@@ -34,7 +34,7 @@
 		<Unit filename="DrawBoard.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="GenerateBoard.c">
+		<Unit filename="MapGenerator.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.c">

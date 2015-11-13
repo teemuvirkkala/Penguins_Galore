@@ -7,18 +7,45 @@
 #include <unistd.h>         // And linux
 #endif
 //inclusion of other .c files//
-#include "DrawBoard.c"
-#include "GenerateBoard.c"
+//#include "DrawBoard.c"
+//#include "MapGenerator.c"
+//MapGenerator - needs to be rewritten as function to MapGenerator.c//
+void MapGenerator(int FishArray, int NumberOfRows, int NumberOfColumns){
+    srand(time(NULL));         // Generator of number of fishes
+    int i,j;
+    for (i=0;i<NumberOfRows;i++) {
+        for(j=0;j<NumberOfColumns;j++)
+            {
+                FishArray[i][j]=(rand()%3)+1;
+            }
+}
+}
+//PlacePenguin - needs to be rewritten as function to PlacePenguin.c//
 
+
+//MixedDrawBoard - needs to be rewritten as function to DrawBoard.c//
+void DrawBoard(int FishArray, int NumberOfRows, int NumberOfColumns){
+int i,j;
+for (i=0;i<NumberOfRows;i++) {
+if(i%2!=0) printf(" ");
+        for(j=0;j<NumberOfColumns;j++)
+        {
+           printf("%i ", FishArray[i][j]);
+        }
+printf("\n");
+}
+}
 
 int main()
 {
-srand(time(NULL));         // Generator of number of fishes
+
 //Taking data from user//
 
     // initializations//
     int NumberOfRows,NumberOfColumns,NumberOfPenguins;
-    int i,j,k; //iterators
+    int FishArray[NumberOfRows][NumberOfColumns];
+    char PenguinArray[NumberOfRows][NumberOfColumns];
+
 
 printf("Enter NumberOfRows: \n");
 scanf("%i", &NumberOfRows);
@@ -28,52 +55,8 @@ printf("Enter NumberOfPenguins: \n");
 scanf("%i", &NumberOfPenguins);
 //Sleep(1000);
 
-// grid generation //
-
-typedef struct GridStruct{
-    int NumberOfFishes;
-    int IsPenguin;
-} Cell;
-
-struct GridStruct Map[NumberOfRows][NumberOfColumns];
-
-
-
-
-//GenerateBoard - needs to be rewritten as function to GenerateBoard.c//
-
-    for (i=0;i<NumberOfRows;i++) {
-        for(j=0;j<NumberOfColumns;j++)
-            {
-                Map[i][j].NumberOfFishes=(rand()%3)+1;
-            }
+MapGenerator(FishArray, NumberOfRows, NumberOfColumns);
+DrawBoard(FishArray, NumberOfRows, NumberOfColumns);
 }
 
-//PlacePenguin - needs to be rewritten as function to PlacePenguin.c//
-k=0;
-if (k != NumberOfPenguins){
-    for (i=0;i<NumberOfRows;i++)
-        for(j=0;j<NumberOfColumns;j++)
-                if(Map[i][j].NumberOfFishes==1)
-                    {
-                        Map[i][j].IsPenguin=1;
-                        k++;
-                        if(k == NumberOfPenguins)
-                            break;
-                    }
-                    if(k == NumberOfPenguins)
-                            break;
 
-//DrawBoard - needs to be rewritten as function to DrawBoard.c//
-
-for (i=0;i<NumberOfRows;i++) {
-if(i%2!=0) printf(" ");
-        for(j=0;j<NumberOfColumns;j++)
-        {
-            if (Map[i][j].IsPenguin==1) printf("P");
-            printf("%i ", Map[i][j].NumberOfFishes);
-        }
-printf("\n");
-}
-
-}
