@@ -7,11 +7,11 @@
 # include <windows.h>
 #define sleep(x) Sleep(1000 * x)
 #endif
-
+#define MAX_LEN 128 // for art drawing
 //inclusion of other .c files//
 //#include "DrawBoard.c"
 //#include "MapGenerator.c
-#define MAX_LEN 128
+
 
 void AsciiArtPrinter(FILE *fptr)
 {
@@ -24,7 +24,7 @@ void AsciiArtPrinter(FILE *fptr)
 }
 
 
-void MapGenerator(int NumbOfRws, int NumbOfCol, int FishArray[500][500]){
+void MapGenerator(int NumbOfRws, int NumbOfCol, int FishArray[NumbOfRws][NumbOfCol]){
     srand(time(NULL));         // Generator of number of fishes
     int i,j;
     for (i=0;i<NumbOfRws;i++) {
@@ -34,7 +34,7 @@ void MapGenerator(int NumbOfRws, int NumbOfCol, int FishArray[500][500]){
             }
 }
 }
-void DrawBoard(const int NumOfRows, int NumOfCol, int FishArray[500][500]){
+void DrawBoard(const int NumOfRows, int NumOfCol, int FishArray[NumOfRows][NumOfCol]){
 int i,j;
 for (i=0;i<NumOfRows;i++) {
 if(i%2!=0) printf(" ");
@@ -81,7 +81,7 @@ scanf("%i", &NumberOfRows);
 printf("Enter NumberOfColumns: \n");
 scanf("%i", &NumberOfColumns);
 
-    int FishArray[500][500];
+    int FishArray[NumberOfRows][NumberOfColumns];
     int i,j;
     for (i=0;i<100;i++) {
         for(j=0;j<100;j++)
