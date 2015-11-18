@@ -37,9 +37,13 @@
 		<Unit filename="MapGenerator.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="PengPos.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="main.h" />
 		<Unit filename="penguins.wav">
 			<Option compile="1" />
 		</Unit>
