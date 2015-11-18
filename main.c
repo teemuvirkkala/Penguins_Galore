@@ -1,17 +1,12 @@
-#include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
 #ifdef __unix__
 # include <unistd.h>
 #elif defined _WIN32
 # include <windows.h>
 #define sleep(x) Sleep(1000 * x)
 #endif
-#define MAX_LEN 128 // for art drawing
-//inclusion of other .c files//
-//#include "DrawBoard.c"
-//#include "MapGenerator.c
 
+#define MAX_LEN 128
+#include "main.h"
 
 void AsciiArtPrinter(FILE *fptr)
 {
@@ -23,34 +18,11 @@ void AsciiArtPrinter(FILE *fptr)
         printf("\n");
 }
 
-
-void MapGenerator(int NumbOfRws, int NumbOfCol, int FishArray[NumbOfRws][NumbOfCol]){
-    srand(time(NULL));         // Generator of number of fishes
-    int i,j;
-    for (i=0;i<NumbOfRws;i++) {
-        for(j=0;j<NumbOfCol;j++)
-            {
-                FishArray[i][j]=((rand()%3)+1);
-            }
-}
-}
-void DrawBoard(const int NumOfRows, int NumOfCol, int FishArray[NumOfRows][NumOfCol]){
-int i,j;
-for (i=0;i<NumOfRows;i++) {
-if(i%2!=0) printf(" ");
-        for(j=0;j<NumOfCol;j++)
-        {
-           printf("%i ", FishArray[i][j]);
-        }
-printf("\n");
-}
-}
-
 int main()
 {
     //fun part start//
-PlaySound("resources/penguins.wav", NULL, SND_ASYNC); // Plays sound file; need to add winmm in Settings -> Compiler ->                                      //                                              ->Linker Settings
-char *filename = "resources/penguinsgalore.txt";
+    /*PlaySound("resources/penguins.wav", NULL, SND_ASYNC); // Plays sound file; need to add winmm in Settings -> Compiler ->                                      //                                              ->Linker Settings
+    char *filename = "resources/penguinsgalore.txt";
     FILE *fptr = NULL;
     if((fptr = fopen(filename,"r")) == NULL)
     {
@@ -69,28 +41,27 @@ char *filename = "resources/penguinsgalore.txt";
     }
     AsciiArtPrinter(fptr2);
     fclose(fptr2);
-Sleep(1000);
-//fun part end//
+    Sleep(1000);*/
+    //fun part end//
 
 
     // initializations//
-    int NumberOfRows,NumberOfColumns;
-  //Taking data from user//
-printf("\nEnter NumberOfRows: \n");
-scanf("%i", &NumberOfRows);
-printf("Enter NumberOfColumns: \n");
-scanf("%i", &NumberOfColumns);
+    int NumberOfRows, NumberOfColumns, PengRows = 1; //PengRows should be the full amount of penguins in the future
+    //Taking data from user//
+    printf("\nEnter NumberOfRows: \n");
+    scanf("%i", &NumberOfRows);
+    printf("Enter NumberOfColumns: \n");
+    scanf("%i", &NumberOfColumns);
 
     int FishArray[NumberOfRows][NumberOfColumns];
-    int i,j;
-    for (i=0;i<100;i++) {
-        for(j=0;j<100;j++)
-            {
-                FishArray[i][j]=0;
-            }
-    }
+    int PengArray[PengRows][3]; /* Columns: playerID, x coord, y coord of penguin? So one row per penguin.
+                                    PlayerID to check if the player is allowed to move the penguin */
 
+    //Main loop should go here
+    MapGenerator(NumberOfRows, NumberOfColumns, FishArray);
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
+    PosPeng(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
 
-MapGenerator(NumberOfRows, NumberOfColumns, FishArray);
-DrawBoard(NumberOfRows, NumberOfColumns, FishArray);
+    exit(0);
 }
