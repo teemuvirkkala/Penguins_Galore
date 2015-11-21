@@ -1,10 +1,3 @@
-#ifdef __unix__
-# include <unistd.h>
-#elif defined _WIN32
-# include <windows.h>
-#define sleep(x) Sleep(1000 * x)
-#endif
-
 #define MAX_LEN 128
 #include "main.h"
 
@@ -46,7 +39,7 @@ int main()
 
 
     // initializations//
-    int NumberOfRows, NumberOfColumns, PengRows = 1; //PengRows should be the full amount of penguins in the future
+    int NumberOfRows, NumberOfColumns, PengRows = 2; //PengRows should be the full amount of penguins in the future
     //Taking data from user//
     printf("\nEnter NumberOfRows: \n");
     scanf("%i", &NumberOfRows);
@@ -60,7 +53,14 @@ int main()
     //Main loop should go here
     MapGenerator(NumberOfRows, NumberOfColumns, FishArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
+
     PosPeng(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
+
+    MovePengSE(1, 1, NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
+
+    MovePengE(2, 1, NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
 
     exit(0);

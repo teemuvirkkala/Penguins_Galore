@@ -3,19 +3,29 @@
 void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int PengRows, int PengArray[PengRows][3]) {
 
     int i,j;
-    //system ( "cls" );
 
-    for (i=0;i<NumOfRows;i++) {
-        if(i%2!=0)
+    #ifdef TURNBYTURN_MODE
+    static int turn=1;
+    system ( "cls" );
+    #endif
+
+    for (i=0; i < NumOfRows; i++) {
+        if(i % 2 != 0)
             printf(" ");
-        for(j=0;j<NumOfCols;j++) {
-            if(PengArray[PengRows-1][0] == 1 && PengArray[PengRows-1][1] == i && PengArray[PengRows-1][2] == j) //Check if the penguin is on these coordinates
+        for(j=0; j < NumOfCols; j++) {
+            if(CheckPeng(i, j, PengRows, PengArray) == 0) { //Check if there's a penguin in given coordinates
                 printf("P ");
-            else
+            } else
                 printf("%i ", FishArray[i][j]); //If not just print the amount of fishes
         }
     printf("\n");
     }
     printf("\n\n");
-    //getch();
+
+    #ifdef TURNBYTURN_MODE
+    printf("Turn %d\n", turn);
+    turn++;
+    printf("Press any key to go to next turn\n");
+    getch();
+    #endif
 }
