@@ -44,28 +44,28 @@
 
 1447336650 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapgenerator.c
 
-1448042133 source:c:\users\teemu\documents\github\penguins_galore\drawboard.c
+1448292424 source:c:\users\teemu\documents\github\penguins_galore\drawboard.c
 	"main.h"
 
-1448038777 c:\users\teemu\documents\github\penguins_galore\main.h
+1448312054 c:\users\teemu\documents\github\penguins_galore\main.h
 	<time.h>
 	<stdio.h>
 	<stdlib.h>
 	<unistd.h>
 	<windows.h>
 
-1448042200 source:c:\users\teemu\documents\github\penguins_galore\main.c
+1448311447 source:c:\users\teemu\documents\github\penguins_galore\main.c
 	"main.h"
 
 1448030070 source:c:\users\teemu\documents\github\penguins_galore\mapgenerator.c
 	"main.h"
 
-1448040903 source:c:\users\teemu\documents\github\penguins_galore\pengpos.c
+1448293322 source:c:\users\teemu\documents\github\penguins_galore\pengpos.c
 	"main.h"
 
-1448038589 source:c:\users\teemu\documents\github\penguins_galore\movepeng.c
+1448313952 source:c:\users\teemu\documents\github\penguins_galore\movepeng.c
 	"main.h"
 
-1448041962 source:c:\users\teemu\documents\github\penguins_galore\checkpeng.c
+1448311978 source:c:\users\teemu\documents\github\penguins_galore\checkpeng.c
 	"main.h"
 

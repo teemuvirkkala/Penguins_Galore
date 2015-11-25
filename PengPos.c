@@ -1,5 +1,7 @@
 #include "main.h"
 
+//Simple example on how to create PosPeng function for the player
+
 void PosPeng(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int PengRows, int PengArray[PengRows][3]) {
 
     int i,j,a;

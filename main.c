@@ -57,10 +57,10 @@ int main()
     PosPeng(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
 
-    MovePengSE(1, 1, NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
+    MovePengNE(1, 2, NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
 
-    MovePengE(2, 1, NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
+    MovePengSE(2, 3, NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
 
     exit(0);

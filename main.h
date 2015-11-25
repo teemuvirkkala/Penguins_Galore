@@ -19,6 +19,9 @@ void MapGenerator(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCo
 void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int PengRows, int PengArray[PengRows][3]);
 void PosPeng(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int PengRows, int PengArray[PengRows][3]);
 int CheckPeng(int, int, int PengRows, int PengArray[PengRows][3]);
+int CheckBoard(int, int, int NumOfCols, int FishArray[][NumOfCols]);
+int CheckMove(int, int, int NumOfCols, int FishArray[][NumOfCols], int PengRows, int PengArray[PengRows][3]);
+int WhichPenguin(int, int PengRows, int PengArray[PengRows][3]);
 
 //Movement function prototypes
 void MovePengNE(int, int, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int PengRows, int PengArray[PengRows][3]);
