@@ -37,13 +37,16 @@
 		<Unit filename="DrawBoard.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="MapCleaner.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="MapGenerator.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="MovePeng.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="PengPos.c">
+		<Unit filename="PosPeng.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.c">
