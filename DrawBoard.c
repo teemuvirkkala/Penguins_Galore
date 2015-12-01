@@ -1,5 +1,7 @@
 #include "main.h"
 
+//System calls act as placeholders as they are slow.
+
 void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     int i,j;
