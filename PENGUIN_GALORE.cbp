@@ -31,13 +31,22 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="CheckPeng.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="DrawBoard.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="MapCleaner.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="MapGenerator.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="PengPos.c">
+		<Unit filename="MovePeng.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="PosPeng.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.c">

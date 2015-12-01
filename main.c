@@ -39,29 +39,33 @@ int main()
 
 
     // initializations//
-    int NumberOfRows, NumberOfColumns, PengRows = 2; //PengRows should be the full amount of penguins in the future
+    int NumberOfRows, NumberOfColumns, AllPengs = 2; //AllPengs should be the full amount of penguins in the future
     //Taking data from user//
     printf("\nEnter NumberOfRows: \n");
     scanf("%i", &NumberOfRows);
+    int SurrNumberOfRows=NumberOfRows+2;
     printf("Enter NumberOfColumns: \n");
     scanf("%i", &NumberOfColumns);
+    int SurrNumberOfColumns=NumberOfColumns+2;
+    int FishArray[SurrNumberOfRows][SurrNumberOfColumns]; //surrounded my 0 fishes floes
+    MapCleaner(NumberOfRows, NumberOfColumns, FishArray);
+    MapGenerator(NumberOfRows, NumberOfColumns, FishArray);
 
-    int FishArray[NumberOfRows][NumberOfColumns];
-    int PengArray[PengRows][3]; /* Columns: playerID, x coord, y coord of penguin? So one row per penguin.
-                                    PlayerID to check if the player is allowed to move the penguin */
+    int PengArray[AllPengs][3]; /* Columns: AllPengs, x coord, y coord of penguin? So one row per penguin.
+                                    AllPengs to check if the player is allowed to move the penguin */
 
     //Main loop should go here
-    MapGenerator(NumberOfRows, NumberOfColumns, FishArray);
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
 
-    PosPeng(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
-    MovePengSE(1, 1, NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
+    PosPeng(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    //example moves
+    MovePengNE(1, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
-    MovePengE(2, 1, NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, PengRows, PengArray);
+    MovePengSE(2, 3, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
     exit(0);
 }
