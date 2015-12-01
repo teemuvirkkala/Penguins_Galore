@@ -1,6 +1,6 @@
 #include "main.h"
 
-void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int PengRows, int PengArray[PengRows][3]) {
+void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     int i,j;
 
@@ -13,7 +13,7 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
         if(i % 2 != 0)
             printf(" ");
         for(j=0; j < NumOfCols; j++) {
-            if(CheckPeng(i, j, PengRows, PengArray) == 0) { //Check if there's a penguin in given coordinates
+            if(CheckPeng(i, j, AllPengs, PengArray) == 0) { //Check if there's a penguin in given coordinates
                 printf("P ");
             } else
                 printf("%i ", FishArray[i][j]); //If not just print the amount of fishes
