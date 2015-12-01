@@ -7,7 +7,7 @@ int CheckPeng(int Row, int Col, int AllPengs, int PengArray[AllPengs][3]) {
     int i;
 
     for(i=0; i < AllPengs; i++) {
-        if(PengArray[i][1] == Row && PengArray[i][2] == Col) {
+        if(PengArray[i][0] > 0 && PengArray[i][1] == Row && PengArray[i][2] == Col) {
             return 0;
         }
     }
@@ -21,11 +21,12 @@ int CheckBoard(int Row, int Col, int NumOfCols, int FishArray[][NumOfCols]) {
     int i;
     i = FishArray[Row][Col];
     return i;
+
 }
 
-//Check if the players movement is possible, 1 = true, 0 = false
+//Check if it's possible to use the tile, 1 = true, 0 = false
 
-int CheckMove(int Row, int Col, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int CheckTile(int Row, int Col, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     //Check if it's possible to move to the tile == the tile isn't a zero
     if(CheckBoard(Row, Col, NumOfCols, FishArray) != 0) {
@@ -37,7 +38,75 @@ int CheckMove(int Row, int Col, int NumOfCols, int FishArray[][NumOfCols], int A
     return 0;
 }
 
-//Returns the row number of the penguin we want to move
+//Check if it's possible to move, 1 = true, 0 = false, checks the whole move at once tile by tile.
+
+int CheckMove(int idRow, int Dir, int Spaces, int Row, int Col, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+
+    int i, canMove = 0;
+    Row = PengArray[idRow][1];
+    Col = PengArray[idRow][2];
+
+    for(i = 0; i < Spaces; i++) {
+        if(Row % 2) {
+            switch(Dir) { //Default the switch to what?
+                case 1: //NE
+                    Row--;
+                    Col++;
+                    break;
+                case 2: //E
+                    Col++;
+                    break;
+                case 3: //SE
+                    Row++;
+                    Col++;
+                    break;
+                case 4: //SW
+                    Row++;
+                    break;
+                case 5:  //W
+                    Col--;
+                    break;
+                case 6:  //NW
+                    Row--;
+                    break;
+            }
+            if(CheckTile(Row, Col, NumOfCols, FishArray, AllPengs, PengArray))
+                canMove = 1;
+            else
+                canMove = 0;
+        } else {
+            switch(Dir) {
+                case 1: //NE
+                    Row--;
+                    break;
+                case 2: //E
+                    Col++;
+                    break;
+                case 3: //SE
+                    Row++;
+                    break;
+                case 4: //SW
+                    Row++;
+                    Col--;
+                    break;
+                case 5:  //W
+                    Col--;
+                    break;
+                case 6:  //NW
+                    Row--;
+                    Col--;
+                    break;
+            }
+            if(CheckTile(Row, Col, NumOfCols, FishArray, AllPengs, PengArray))
+                canMove = 1;
+            else
+                canMove = 0;
+        }
+    }
+    return canMove;
+}
+
+//Returns the row number of the penguin we want to move, returns -1 if the ID doesn't match any penguins
 
 int WhichPenguin(int ID, int AllPengs, int PengArray[AllPengs][3]) {
 
@@ -47,6 +116,7 @@ int WhichPenguin(int ID, int AllPengs, int PengArray[AllPengs][3]) {
         if(PengArray[i][0] == ID)
             return i;
     }
+    return -1;
 }
 
 
