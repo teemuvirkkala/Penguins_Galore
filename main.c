@@ -53,18 +53,30 @@ int main()
 
     int PengArray[AllPengs][3]; /* Columns: AllPengs, x coord, y coord of penguin? So one row per penguin.
                                     AllPengs to check if the player is allowed to move the penguin */
-
+    InitArray(AllPengs, 3, PengArray);
     //Main loop should go here
 
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
-    PosPeng(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    PosPeng2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     //example moves
-    MovePengNE(1, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    MovePengSE(1, 1, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
-    MovePengSE(2, 3, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    MovePengSE(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+
+    MovePengE(1, 1, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+
+    MovePengW(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+
+    MovePengNE(1, 1, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+
+    MovePengNW(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
     exit(0);
