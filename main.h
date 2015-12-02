@@ -14,6 +14,27 @@
 /*TURNBYTURN_MODE, Wait the player to press anything every DrawScreen() and clear the screen,
 easier to follow longer games, but still gives us the opportunity to see full output, windows only*/
 
+//Commands for user//
+    //Moving//
+    void UserMoveNE (int ID, int Spaces);
+    void UserMoveE (int ID, int Spaces);
+    void UserMoveSE (int ID, int Spaces);
+    void UserMoveSW (int ID, int Spaces);
+    void UserMoveNW (int ID, int Spaces);
+    void UserMoveW (int ID, int Spaces);
+
+
+
+
+
+
+
+
+
+
+
+
+
 //BasicFunctions
 void InitArray(int Rows, int Cols, int a[Rows][Cols]);
 void MapGenerator(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]);

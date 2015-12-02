@@ -48,7 +48,7 @@ int main()
     scanf("%i", &NumberOfColumns);
     int SurrNumberOfColumns=NumberOfColumns+2;
     int FishArray[SurrNumberOfRows][SurrNumberOfColumns]; //surrounded my 0 fishes floes
-    MapCleaner(NumberOfRows, NumberOfColumns, FishArray);
+    MapCleaner(SurrNumberOfRows, SurrNumberOfColumns, FishArray);
     MapGenerator(NumberOfRows, NumberOfColumns, FishArray);
 
     int PengArray[AllPengs][3]; /* Columns: AllPengs, x coord, y coord of penguin? So one row per penguin.
