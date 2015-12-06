@@ -30,7 +30,7 @@ void MovePengNE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[
 
 void MovePengE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
-    int i, idRow, Row, Col;
+    int idRow, Row, Col;
 
     idRow = WhichPenguin(ID, AllPengs, PengArray); //Search for the right row in the array so we don't have to check it every incrementation of Spaces
     Row = PengArray[idRow][1];
@@ -86,7 +86,7 @@ void MovePengSW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[
 
 void MovePengW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
-    int i, idRow, Row, Col;
+    int idRow, Row, Col;
 
     idRow = WhichPenguin(ID, AllPengs, PengArray); //Search for the right row in the array so we don't have to check it every incrementation of Spaces
     Row = PengArray[idRow][1];
