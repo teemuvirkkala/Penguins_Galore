@@ -1,6 +1,6 @@
 #include "main.h"
+#include "global.h"
 
-extern int SurrNumberOfRows, SurrNumberOfColumns, NumberOfRows, NumberOfColumns, AllPengs, FishArray[SurrNumberOfRows][SurrNumberOfColumns], PengArray[AllPengs][3];
 int NumOfRows=NumberOfRows, NumOfCols=NumberOfColumns;
 //set of functions of moves for user algorhitm. They take direction, amount of spaces and number of peng and then are used as bridge to
 //call specific function with moe args (saving coding time for user)
