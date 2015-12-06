@@ -1,6 +1,7 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 
 #ifdef __unix__
 # include <unistd.h>
@@ -48,6 +49,7 @@ int CheckPeng(int, int, int AllPengs, int PengArray[AllPengs][3]);
 int CheckBoard(int, int, int NumOfCols, int FishArray[][NumOfCols]);
 int CheckTile(int, int, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 int CheckMove(int, int, int, int, int, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
+int CheckEnd(int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 int WhichPenguin(int, int AllPengs, int PengArray[AllPengs][3]);
 
 //Movement function prototypes
