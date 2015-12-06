@@ -106,6 +106,23 @@ int CheckMove(int idRow, int Dir, int Spaces, int Row, int Col, int NumOfCols, i
     return canMove;
 }
 
+int CheckEnd(int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+    int i, j, Row, Col, GameEnd;
+
+    for(i = 0; i < AllPengs; i++) { //Check all the penguins
+        for(j = 1; j <= 6; j++) { //Check all the directions for each penguin
+            Row = PengArray[i][1];
+            Col = PengArray[i][1];
+            if(CheckMove(i, j, 1, Row, Col, NumOfCols, FishArray, AllPengs, PengArray) == 0) {
+                GameEnd = 1;
+            } else {
+                GameEnd = 0;
+            }
+        }
+    }
+    return GameEnd;
+}
+
 //Returns the row number of the penguin we want to move, returns -1 if the ID doesn't match any penguins
 
 int WhichPenguin(int ID, int AllPengs, int PengArray[AllPengs][3]) {
