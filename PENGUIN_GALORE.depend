@@ -23,13 +23,16 @@
 
 1447336650 c:\users\micha許dropbox\private\dokumenty dropbox\studia\penguin_galore\generateboard.c
 
-1449435041 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\drawboard.c
-	"main.h"
+1447336658 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\drawboard.c
 
 1447336650 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\generateboard.c
 
-1449066190 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.c
-	"main.h"
+1447628388 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.c
+	<stdio.h>
+	<time.h>
+	<stdlib.h>
+	<unistd.h>
+	<windows.h>
 
 1447336658 d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\drawboard.c
 
@@ -39,8 +42,7 @@
 
 1447336650 d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapgenerator.c
 
-1449157431 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapgenerator.c
-	"main.h"
+1447336650 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapgenerator.c
 
 1448954442 source:c:\users\teemu\documents\github\penguins_galore\drawboard.c
 	"main.h"
@@ -67,7 +69,7 @@
 1448986997 source:c:\users\teemu\documents\github\penguins_galore\checkpeng.c
 	"main.h"
 
-1449157958 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapgenerator.c
+1449157431 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapgenerator.c
 	"main.h"
 
 1449064409 c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.h
@@ -99,24 +101,5 @@
 	"main.h"
 
 1448988252 source:c:\users\teemu\documents\github\penguins_galore\pospeng.c
-	"main.h"
-
-1448990655 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\checkpeng.c
-	"main.h"
-
-1449064409 d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.h
-	<time.h>
-	<stdio.h>
-	<stdlib.h>
-	<unistd.h>
-	<windows.h>
-
-1449066290 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapcleaner.c
-	"main.h"
-
-1448990655 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\movepeng.c
-	"main.h"
-
-1448990655 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\pospeng.c
 	"main.h"
 
