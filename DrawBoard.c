@@ -4,9 +4,7 @@
 
 void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
-    int i,j,k=0;
-    HANDLE  hConsole;
-    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    int i,j;
 
     #ifdef TURNBYTURN_MODE
     static int turn=1;
@@ -16,31 +14,12 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
     for (i=0; i < NumOfRows; i++) {
         if(i % 2 != 0)
             printf(" ");
-            //SetConsoleTextAttribute(hConsole, 7);
         for(j=0; j < NumOfCols; j++) {
             if(CheckPeng(i, j, AllPengs, PengArray) == 0) { //Check if there's a penguin in given coordinates
-                if(k%2==0){
-                  SetConsoleTextAttribute(hConsole, 14);
-                printf("P  ");
-k++;
-                }
-                else{
-                   SetConsoleTextAttribute(hConsole, 15);
-                printf("P  ");
-k++;
-                }
-
-
-                SetConsoleTextAttribute(hConsole, 7);
-            } else if(FishArray[i][j]==0) {
-                 printf("   ");
-            } else {
-
-                printf("%i  ", FishArray[i][j]); //If not just print the amount of fishes
-            }
+                printf("P  ");}
+            else if(FishArray[i][j]==0) printf("   ");
+            else printf("%i  ", FishArray[i][j]); //If not just print the amount of fishes
         }
-
-
     printf("\n\n");
     }
     printf("\n\n");
