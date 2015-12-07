@@ -39,7 +39,7 @@ int main()
 
 
     // initializations//
-    int NumberOfRows, NumberOfColumns, AllPengs = 2; //AllPengs should be the full amount of penguins in the future
+    int NumberOfRows, NumberOfColumns, AllPengs = 4; //AllPengs should be the full amount of penguins in the future
     //Taking data from user//
     printf("\nEnter NumberOfRows: \n");
     scanf("%i", &NumberOfRows);
