@@ -1,17 +1,17 @@
 #include "main.h"
 
-//Returns 0 if there's a penguin in given coordinates and 1 if the space is free
+//Returns PengID if there's a penguin in given coordinates and 0 if the space is free
 
 int CheckPeng(int Row, int Col, int AllPengs, int PengArray[AllPengs][3]) {
 
     int i;
 
-    for(i=0; i < AllPengs; i++) {
+    for(i = 0; i < AllPengs; i++) {
         if(PengArray[i][0] > 0 && PengArray[i][1] == Row && PengArray[i][2] == Col) {
-            return 0;
+            return PengArray[i][0];
         }
     }
-    return 1;
+    return 0;
 }
 
 //Returns the number of fishes in given coordinates
@@ -31,7 +31,7 @@ int CheckTile(int Row, int Col, int NumOfCols, int FishArray[][NumOfCols], int A
     //Check if it's possible to move to the tile == the tile isn't a zero
     if(CheckBoard(Row, Col, NumOfCols, FishArray) != 0) {
         //Check if there's already a penguin on the tile
-        if(CheckPeng(Row, Col, AllPengs, PengArray)) {
+        if(CheckPeng(Row, Col, AllPengs, PengArray) == 0) {
             return 1;
         }
     }
@@ -73,7 +73,7 @@ int CheckMove(int idRow, int Dir, int Spaces, int Row, int Col, int NumOfCols, i
             if(CheckTile(Row, Col, NumOfCols, FishArray, AllPengs, PengArray))
                 canMove = 1;
             else
-                canMove = 0;
+                return 0;
         } else {
             switch(Dir) {
                 case 1: //NE
@@ -100,7 +100,7 @@ int CheckMove(int idRow, int Dir, int Spaces, int Row, int Col, int NumOfCols, i
             if(CheckTile(Row, Col, NumOfCols, FishArray, AllPengs, PengArray))
                 canMove = 1;
             else
-                canMove = 0;
+                return 0;
         }
     }
     return canMove;
