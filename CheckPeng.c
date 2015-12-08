@@ -116,7 +116,7 @@ int CheckEnd(int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengAr
             if(CheckMove(i, j, 1, Row, Col, NumOfCols, FishArray, AllPengs, PengArray) == 0) {
                 GameEnd = 1;
             } else {
-                GameEnd = 0;
+                return 0;
             }
         }
     }
