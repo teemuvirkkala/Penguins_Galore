@@ -10,7 +10,8 @@
 #define sleep(x) Sleep(1000 * x)
 #endif
 
-#define TURNBYTURN_MODE 1
+#define TURNBYTURN_MODE
+//#define DEBUG_MODE
 
 /*TURNBYTURN_MODE, Wait the player to press anything every DrawScreen() and clear the screen,
 easier to follow longer games, but still gives us the opportunity to see full output, windows only*/
@@ -41,6 +42,7 @@ void InitArray(int Rows, int Cols, int a[Rows][Cols]);
 void MapGenerator(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]);
 void MapCleaner(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]);
 void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
+void DrawBoard2(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 int PosPeng(int, int, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 void PosPeng2(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 
