@@ -4,7 +4,7 @@
 
 void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
-    int i,j,k=0;
+    int i,j;
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -13,35 +13,41 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
     system ( "cls" );
     #endif
 
-    for (i=0; i < NumOfRows; i++) {
+    #ifdef DEBUG_MODE
+    for (i = 0; i < NumOfRows; i++) {
+    #else
+    for (i = 1; i < NumOfRows - 1; i++) {
+    #endif // DEBUG_MODE
         if(i % 2 != 0)
             printf(" ");
             //SetConsoleTextAttribute(hConsole, 7);
-        for(j=0; j < NumOfCols; j++) {
-            if(CheckPeng(i, j, AllPengs, PengArray) == 0) { //Check if there's a penguin in given coordinates
-                if(k%2==0){
-                  SetConsoleTextAttribute(hConsole, 14);
-                printf("P  ");
-k++;
+        #ifdef DEBUG_MODE
+        for(j = 0; j < NumOfCols; j++) {
+        #else
+        for(j = 1; j < NumOfCols - 1; j++) {
+        #endif // DEBUG_MODE
+            if(CheckPeng(i, j, AllPengs, PengArray)) { //Check if there's a penguin in given coordinates
+                if(CheckPeng(i, j, AllPengs, PengArray) % 2){
+                    SetConsoleTextAttribute(hConsole, 14);
+                    printf("P  ");
+                } else{
+                    SetConsoleTextAttribute(hConsole, 12);
+                    printf("P  ");
                 }
-                else{
-                   SetConsoleTextAttribute(hConsole, 15);
-                printf("P  ");
-k++;
-                }
-
-
                 SetConsoleTextAttribute(hConsole, 7);
-            } else if(FishArray[i][j]==0) {
-                 printf("   ");
+            } else if(FishArray[i][j] == 0) {
+                #ifdef DEBUG_MODE
+                printf("0  ");
+                #else
+                printf("   ");
+                #endif // DEBUG_MODE
+
             } else {
 
                 printf("%i  ", FishArray[i][j]); //If not just print the amount of fishes
             }
         }
-
-
-    printf("\n\n");
+        printf("\n\n");
     }
     printf("\n\n");
 

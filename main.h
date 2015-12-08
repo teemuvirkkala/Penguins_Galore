@@ -10,7 +10,8 @@
 #define sleep(x) Sleep(1000 * x)
 #endif
 
-#define TURNBYTURN_MODE 1
+#define TURNBYTURN_MODE
+//#define DEBUG_MODE
 
 /*TURNBYTURN_MODE, Wait the player to press anything every DrawScreen() and clear the screen,
 easier to follow longer games, but still gives us the opportunity to see full output, windows only*/
