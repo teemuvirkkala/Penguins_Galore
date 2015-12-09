@@ -40,9 +40,9 @@ int CheckTile(int Row, int Col, int NumOfCols, int FishArray[][NumOfCols], int A
 
 //Check if it's possible to move, 1 = true, 0 = false, checks the whole move at once tile by tile.
 
-int CheckMove(int idRow, int Dir, int Spaces, int Row, int Col, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int CheckMove(int idRow, int Dir, int Spaces, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
-    int i, canMove = 0;
+    int i, canMove = 0, Row, Col;
     Row = PengArray[idRow][1];
     Col = PengArray[idRow][2];
 
@@ -107,13 +107,11 @@ int CheckMove(int idRow, int Dir, int Spaces, int Row, int Col, int NumOfCols, i
 }
 
 int CheckEnd(int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
-    int i, j, Row, Col, GameEnd;
+    int i, j, GameEnd;
 
     for(i = 0; i < AllPengs; i++) { //Check all the penguins
         for(j = 1; j <= 6; j++) { //Check all the directions for each penguin
-            Row = PengArray[i][1];
-            Col = PengArray[i][1];
-            if(CheckMove(i, j, 1, Row, Col, NumOfCols, FishArray, AllPengs, PengArray) == 0) {
+            if(CheckMove(i, j, 1, NumOfCols, FishArray, AllPengs, PengArray) == 0) {
                 GameEnd = 1;
             } else {
                 return 0;

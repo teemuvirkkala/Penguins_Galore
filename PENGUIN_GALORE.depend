@@ -42,10 +42,10 @@
 1449602391 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapgenerator.c
 	"main.h"
 
-1449586005 source:c:\users\teemu\documents\github\penguins_galore\drawboard.c
+1449693332 source:c:\users\teemu\documents\github\penguins_galore\drawboard.c
 	"main.h"
 
-1449588144 c:\users\teemu\documents\github\penguins_galore\main.h
+1449694418 c:\users\teemu\documents\github\penguins_galore\main.h
 	<time.h>
 	<stdio.h>
 	<stdlib.h>
@@ -53,19 +53,19 @@
 	<unistd.h>
 	<windows.h>
 
-1449588070 source:c:\users\teemu\documents\github\penguins_galore\main.c
+1449693910 source:c:\users\teemu\documents\github\penguins_galore\main.c
 	"main.h"
 
-1449584906 source:c:\users\teemu\documents\github\penguins_galore\mapgenerator.c
+1449589238 source:c:\users\teemu\documents\github\penguins_galore\mapgenerator.c
 	"main.h"
 
 1448293322 source:c:\users\teemu\documents\github\penguins_galore\pengpos.c
 	"main.h"
 
-1449512828 source:c:\users\teemu\documents\github\penguins_galore\movepeng.c
+1449694485 source:c:\users\teemu\documents\github\penguins_galore\movepeng.c
 	"main.h"
 
-1449587929 source:c:\users\teemu\documents\github\penguins_galore\checkpeng.c
+1449694291 source:c:\users\teemu\documents\github\penguins_galore\checkpeng.c
 	"main.h"
 
 1449667641 source:c:\users\micha³\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapgenerator.c
@@ -97,10 +97,10 @@
 1449667641 source:c:\users\micha³\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapcleaner.c
 	"main.h"
 
-1449585456 source:c:\users\teemu\documents\github\penguins_galore\mapcleaner.c
+1449693332 source:c:\users\teemu\documents\github\penguins_galore\mapcleaner.c
 	"main.h"
 
-1449586415 source:c:\users\teemu\documents\github\penguins_galore\pospeng.c
+1449693716 source:c:\users\teemu\documents\github\penguins_galore\pospeng.c
 	"main.h"
 
 1449672892 source:c:\users\micha³\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\algorithms\manualoverdrive.c
@@ -127,4 +127,7 @@
 
 1449686567 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapcleaner.c
 	"main.h"
+
+1449693332 source:c:\users\teemu\documents\github\penguins_galore\algorithms\manualoverdrive.c
+	<windows.h>
 
