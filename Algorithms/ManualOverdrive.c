@@ -1,29 +1,56 @@
-void UserEnterCrdX(int i)
+#include <windows.h>
+
+int UserEnterCrdX(int i)
 {
+    HANDLE  hConsole;
+    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     int x;
-    if (i%2==0) printf("Player1\n");
-    else printf("Player2\n");
-    printf("Enter X cordinate of your %i penguin: \n", i);
-    scanf("%i", x);
+
+    if (i%2==0) {
+            SetConsoleTextAttribute(hConsole, 14);
+    printf("Player1\n");}
+
+    else {
+            SetConsoleTextAttribute(hConsole, 12);
+    printf("Player2\n");}
+    printf("Enter row of your %i penguin: \n", i);
+    scanf("%i", &x);
+    SetConsoleTextAttribute(hConsole, 7);
     return x;
 }
 
-void UserEnterCrdY(int i)
+int UserEnterCrdY(int i)
 {
+    HANDLE  hConsole;
+    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     int y;
-    if (i%2==0) printf("Player1\n");
-    else printf("Player2\n");
-    printf("Enter Y cordinate of your %i penguin: \n", i);
-    scanf("%i", y);
+    if (i%2==0) {
+            SetConsoleTextAttribute(hConsole, 14);
+    printf("Player1\n");}
+
+    else {
+            SetConsoleTextAttribute(hConsole, 12);
+    printf("Player2\n");}
+    printf("Enter column of your %i penguin: \n", i);
+        SetConsoleTextAttribute(hConsole, 7);
+    scanf("%i", &y);
     return y;
 }
 
-void UserEnterDir(int i)
+int UserEnterDir(int i)
 {
+    HANDLE  hConsole;
+    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     int d;
-    if (i%2==0) printf("Player1\n");
-    else printf("Player2\n");
+    if (i%2==0) {
+            SetConsoleTextAttribute(hConsole, 14);
+    printf("Player1\n");}
+
+    else {
+            SetConsoleTextAttribute(hConsole, 12);
+    printf("Player2\n");}
     printf("Enter direction of movement according to %i penguin: \n", i);
+        SetConsoleTextAttribute(hConsole, 7);
     scanf("%i", d);
     return d;
 }

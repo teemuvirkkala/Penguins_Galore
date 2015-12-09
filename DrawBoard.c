@@ -28,13 +28,13 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
         #endif // DEBUG_MODE
             if(CheckPeng(i, j, AllPengs, PengArray)) { //Check if there's a penguin in given coordinates
                 if(CheckPeng(i, j, AllPengs, PengArray) % 2){
-                    SetConsoleTextAttribute(hConsole, 14);
+                    SetConsoleTextAttribute(hConsole, 14);  //yellow
                     printf("P  ");
                 } else{
-                    SetConsoleTextAttribute(hConsole, 12);
+                    SetConsoleTextAttribute(hConsole, 12);  //red
                     printf("P  ");
                 }
-                SetConsoleTextAttribute(hConsole, 7);
+                SetConsoleTextAttribute(hConsole, 7);       //normal
             } else if(FishArray[i][j] == 0) {
                 #ifdef DEBUG_MODE
                 printf("0  ");

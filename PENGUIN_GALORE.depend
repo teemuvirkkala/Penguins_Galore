@@ -23,12 +23,12 @@
 
 1447336650 c:\users\micha³\dropbox\private\dokumenty dropbox\studia\penguin_galore\generateboard.c
 
-1449688747 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\drawboard.c
+1449689969 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\drawboard.c
 	"main.h"
 
 1447336650 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\generateboard.c
 
-1449687170 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.c
+1449692787 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.c
 	"main.h"
 
 1447336658 d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\drawboard.c
@@ -105,12 +105,13 @@
 
 1449672892 source:c:\users\micha³\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\algorithms\manualoverdrive.c
 
-1449672892 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\algorithms\manualoverdrive.c
+1449690213 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\algorithms\manualoverdrive.c
+	<windows.h>
 
 1449612037 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\checkpeng.c
 	"main.h"
 
-1449686553 d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.h
+1449692205 d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.h
 	<time.h>
 	<stdio.h>
 	<stdlib.h>
@@ -121,7 +122,7 @@
 1449439583 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\movepeng.c
 	"main.h"
 
-1449602391 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\pospeng.c
+1449692214 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\pospeng.c
 	"main.h"
 
 1449686567 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapcleaner.c

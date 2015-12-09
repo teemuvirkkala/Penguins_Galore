@@ -26,9 +26,9 @@ easier to follow longer games, but still gives us the opportunity to see full ou
     void UserMoveW (int ID, int Spaces);
 
     //Manual//
-    void UserEnterDir(int i);
-    void UserEnterCrdY(int i);
-    void UserEnterCrdX(int i);
+    int UserEnterDir(int i);
+    int UserEnterCrdY(int i);
+    int UserEnterCrdX(int i);
 
 
 
@@ -45,7 +45,7 @@ void PengCleaner(int AllPengs, int PengArray[AllPengs][3]);
 void MapGenerator(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]);
 void MapCleaner(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]);
 void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
-int PosPeng(int, int, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
+int PosPeng(int, int, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 void PosPeng2(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 
 //CheckingFunctions

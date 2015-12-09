@@ -3,7 +3,7 @@
 //PosPeng function to be used in playing algorithms. Player inputs Row and Col where he wishes to place his/her penguin.
 //PosPeng will input the penguin to the next free line and an ID for it. Return 1 if successful and 0 if Penguin can't be placed on given tile.
 
-int PosPeng(int Row, int Col, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int PosPeng(int Row, int Col, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     int i;
 
