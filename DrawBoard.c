@@ -51,6 +51,25 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
     }
     printf("\n\n");
 
+//printf coords of pengs under map
+int k;
+        for(k = 0; k < AllPengs; k++) {
+        if(PengArray[k][1]==0 && PengArray[k][2]==0) printf(" ");
+        else if (k%2==0 && k==0) {                                  //workaround for printing coords of no. 0 peng.
+        SetConsoleTextAttribute(hConsole, 14);
+        printf("%i. [%i, %i]\n", k, PengArray[k][1], PengArray[k][2]);
+        }
+        else if (k%2==0 && k!=0) {
+            SetConsoleTextAttribute(hConsole, 14);
+            printf("%i. [%i, %i]\n", k, PengArray[k][1], PengArray[k][2]);
+        }
+        else if (k%2!=0 & k!=0) {SetConsoleTextAttribute(hConsole, 12);
+            printf("\t\t%i. [%i, %i]\n", k, PengArray[k][1], PengArray[k][2]);
+        }
+    }
+
+SetConsoleTextAttribute(hConsole, 7);
+
     #ifdef TURNBYTURN_MODE
     printf("Turn %d\n", turn);
     turn++;

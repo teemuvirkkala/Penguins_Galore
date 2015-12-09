@@ -39,7 +39,7 @@ int main()
 
 
     // initializations//
-    int NumberOfRows, NumberOfColumns, AllPengs = 4; //AllPengs should be the full amount of penguins in the future
+    int NumberOfRows, NumberOfColumns, AllPengs = 4, i, X, Y; //AllPengs should be the full amount of penguins in the future
     //Taking data from user//
     printf("\nEnter NumberOfRows: \n");
     scanf("%i", &NumberOfRows);
@@ -57,6 +57,12 @@ int main()
                                     AllPengs to check if the player is allowed to move the penguin */
     MapCleaner(AllPengs, 3, PengArray);
     //Main loop should go here
+    //Manual loop//
+
+  //Peng placing
+
+
+
 
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
