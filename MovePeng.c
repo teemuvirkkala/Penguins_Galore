@@ -6,7 +6,7 @@
 -Checking function CheckMove() checks all the tiles before we actually move at all. If there's a penguin or a zero on the path we don't move at all!
 -Feedback for the player if the move is invalid?*/
 
-void MovePengNE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int MovePengNE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     int i, idRow, Row, Col;
 
@@ -14,21 +14,24 @@ void MovePengNE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[
     Row = PengArray[idRow][1];
     Col = PengArray[idRow][2];
 
-    if(CheckMove(idRow, 1, Spaces, Row, Col, NumOfCols, FishArray, AllPengs, PengArray)) {
+    if(CheckMove(idRow, 1, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
         FishArray[Row][Col] = 0;
         for(i = 0; i < Spaces; i++) {
             if(PengArray[idRow][1] % 2) {
                 (PengArray[idRow][1])--; //X -= 1
                 (PengArray[idRow][2])++; //Y += 1
+                return 1;
             } else {
                 (PengArray[idRow][1])--; //X -= 1
+                return 1;
             }
         }
     } //if the move fails inform player somehow?
+    return 0;
 }
 
 
-void MovePengE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int MovePengE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     int idRow, Row, Col;
 
@@ -36,13 +39,15 @@ void MovePengE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
     Row = PengArray[idRow][1];
     Col = PengArray[idRow][2];
 
-    if(CheckMove(idRow, 2, Spaces, Row, Col, NumOfCols, FishArray, AllPengs, PengArray)) {
+    if(CheckMove(idRow, 2, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
         FishArray[Row][Col] = 0;
         PengArray[idRow][2] += Spaces; //Y += Spaces
+        return 1;
     }
+    return 0;
 }
 
-void MovePengSE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int MovePengSE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     int i, idRow, Row, Col;
 
@@ -50,20 +55,23 @@ void MovePengSE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[
     Row = PengArray[idRow][1];
     Col = PengArray[idRow][2];
 
-    if(CheckMove(idRow, 3, Spaces, Row, Col, NumOfCols, FishArray, AllPengs, PengArray)) {
+    if(CheckMove(idRow, 3, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
         FishArray[Row][Col] = 0;
         for(i = 0; i < Spaces; i++) {
             if(PengArray[idRow][1] % 2) {
                 (PengArray[idRow][1])++; //X += 1
                 (PengArray[idRow][2])++; //Y += 1
+                return 1;
             } else {
                 (PengArray[idRow][1])++; //Y += 1
+                return 1;
             }
         }
     } //if the move fails inform player somehow?
+    return 0;
 }
 
-void MovePengSW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int MovePengSW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     int i, idRow, Row, Col;
 
@@ -71,20 +79,23 @@ void MovePengSW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[
     Row = PengArray[idRow][1];
     Col = PengArray[idRow][2];
 
-    if(CheckMove(idRow, 4, Spaces, Row, Col, NumOfCols, FishArray, AllPengs, PengArray)) {
+    if(CheckMove(idRow, 4, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
         FishArray[Row][Col] = 0;
         for(i = 0; i < Spaces; i++) {
             if(PengArray[idRow][1] % 2 == 0) {
                 (PengArray[idRow][1])++; //X += 1
                 (PengArray[idRow][2])--; //Y -= 1
+                return 1;
             } else {
                 (PengArray[idRow][1])++; //Y += 1
+                return 1;
             }
         }
     } //if the move fails inform player somehow?
+    return 0;
 }
 
-void MovePengW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int MovePengW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     int idRow, Row, Col;
 
@@ -92,13 +103,15 @@ void MovePengW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
     Row = PengArray[idRow][1];
     Col = PengArray[idRow][2];
 
-    if(CheckMove(idRow, 5, Spaces, Row, Col, NumOfCols, FishArray, AllPengs, PengArray)) {
+    if(CheckMove(idRow, 5, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
         FishArray[Row][Col] = 0;
         PengArray[idRow][2] -= Spaces;
+        return 1;
     }
+    return 0;
 }
 
-void MovePengNW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int MovePengNW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     int i, idRow, Row, Col;
 
@@ -106,15 +119,18 @@ void MovePengNW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[
     Row = PengArray[idRow][1];
     Col = PengArray[idRow][2];
 
-    if(CheckMove(idRow, 6, Spaces, Row, Col, NumOfCols, FishArray, AllPengs, PengArray)) {
+    if(CheckMove(idRow, 6, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
         FishArray[Row][Col] = 0;
         for(i = 0; i < Spaces; i++) {
             if(PengArray[idRow][1] % 2 == 0) {
                 (PengArray[idRow][1])--; //X -= 1
                 (PengArray[idRow][2])--; //Y -= 1
+                return 1;
             } else {
                 (PengArray[idRow][1])--; //Y += 1
+                return 1;
             }
         }
     } //if the move fails inform player somehow?
+    return 0;
 }

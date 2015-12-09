@@ -60,21 +60,22 @@ int main()
     //Main loop should go here
     //Manual loop//
 
-  /*Peng placing - needs fixing
+    //Peng placing - needs fixing
     for (i=0;i<AllPengs;i++)
     {
 
         X=UserEnterCrdX(i);
         Y=UserEnterCrdY(i);
-        if (PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray[NumberOfRows][NumberOfColumns], AllPengs, PengArray[AllPengs][3])==1) continue;
+        if (PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)==1)
+            continue;
         else printf("bad!");
 
-    }*/
+    }
 
 
 
 
-    PosPeng2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    //PosPeng2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     //example moves
     MovePengSE(1, 1, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
