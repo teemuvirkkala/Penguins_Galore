@@ -14,7 +14,7 @@ void AsciiArtPrinter(FILE *fptr)
 int main()
 {
     //fun part start//
-    /*PlaySound("resources/penguins.wav", NULL, SND_ASYNC); // Plays sound file; need to add winmm in Settings -> Compiler ->                                      //                                              ->Linker Settings
+//    PlaySound("resources/penguins.wav", NULL, SND_ASYNC); // Plays sound file; need to add winmm in Settings -> Compiler ->                                      //                                              ->Linker Settings
     char *filename = "resources/penguinsgalore.txt";
     FILE *fptr = NULL;
     if((fptr = fopen(filename,"r")) == NULL)
@@ -34,7 +34,7 @@ int main()
     }
     AsciiArtPrinter(fptr2);
     fclose(fptr2);
-    Sleep(1000);*/
+    Sleep(1000);
     //fun part end//
 
 
@@ -60,17 +60,20 @@ int main()
     //Main loop should go here
     //Manual loop//
 
-    //Peng placing - needs fixing
+    //Peng placing
     for (i=0;i<AllPengs;i++)
     {
-
+        Enter:
         X=UserEnterCrdX(i);
         Y=UserEnterCrdY(i);
         if (PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)==1)
             continue;
-        else printf("bad!");
-
+        else {printf("bad!\n");
+        goto Enter;
+        }
     }
+
+    //Moving
 
 
 
@@ -84,10 +87,10 @@ int main()
     MovePengSE(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
-    MovePengSW(3, 1, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    MovePengSW(1, 1, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
-    MovePengSW(4, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    MovePengSW(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
     MovePengNW(1, 4, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
@@ -96,10 +99,10 @@ int main()
     MovePengNW(2, 4, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
-    MovePengE(3, 1, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    MovePengE(1, 1, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
-    MovePengW(4, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    MovePengW(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
     exit(0);
