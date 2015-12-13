@@ -61,7 +61,7 @@ int main()
     //Manual loop//
 
     //Peng placing
-    for (i=0;i<AllPengs;i++)
+   /* for (i=0;i<AllPengs;i++)
     {
         Enter:
         X=UserEnterCrdX(i);
@@ -72,34 +72,34 @@ int main()
         goto Enter;
         }
     }
-
+*/
     //Moving
 
 
 
 
-    //PosPeng2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    PosPeng2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     //example moves
-    MovePengSE(1, 1, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    MovePengSE(1, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
     MovePengSE(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
-    MovePengSW(1, 1, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    MovePengSW(1, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
     MovePengSW(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
-    MovePengNW(1, 4, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    MovePengNW(1, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
-    MovePengNW(2, 4, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    MovePengNW(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
-    MovePengE(1, 1, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    MovePengE(1, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
     MovePengW(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
