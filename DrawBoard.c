@@ -57,14 +57,14 @@ int k;
         if(PengArray[k][1]==0 && PengArray[k][2]==0) printf(" ");
         else if (k%2==0 && k==0) {                                  //workaround for printing coords of no. 0 peng.
         SetConsoleTextAttribute(hConsole, 14);
-        printf("%i. [%i, %i]\n", k+1, PengArray[k][1], PengArray[k][2]);
+        printf("%i. [%i, %i]\n", k, PengArray[k][1], PengArray[k][2]);
         }
         else if (k%2==0 && k!=0) {
             SetConsoleTextAttribute(hConsole, 14);
-            printf("%i. [%i, %i]\n", k+1, PengArray[k][1], PengArray[k][2]);
+            printf("%i. [%i, %i]\n", k, PengArray[k][1], PengArray[k][2]);
         }
         else if (k%2!=0 && k!=0) {SetConsoleTextAttribute(hConsole, 12);
-            printf("\t\t%i. [%i, %i]\n", k+1, PengArray[k][1], PengArray[k][2]);
+            printf("\t\t%i. [%i, %i]\n", k, PengArray[k][1], PengArray[k][2]);
         }
     }
 

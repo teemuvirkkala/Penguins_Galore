@@ -23,12 +23,12 @@
 
 1447336650 c:\users\micha³\dropbox\private\dokumenty dropbox\studia\penguin_galore\generateboard.c
 
-1450034751 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\drawboard.c
+1449904582 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\drawboard.c
 	"main.h"
 
 1447336650 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\generateboard.c
 
-1450037539 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.c
+1450032273 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.c
 	"main.h"
 
 1447336658 d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\drawboard.c
@@ -109,10 +109,10 @@
 1449904582 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\algorithms\manualoverdrive.c
 	<windows.h>
 
-1450040101 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\checkpeng.c
+1450032252 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\checkpeng.c
 	"main.h"
 
-1450033810 d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.h
+1449904582 d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.h
 	<time.h>
 	<stdio.h>
 	<stdlib.h>
@@ -132,7 +132,6 @@
 1449693332 source:c:\users\teemu\documents\github\penguins_galore\algorithms\manualoverdrive.c
 	<windows.h>
 
-1450040271 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\algorithms\manualoverride.c
+1450029625 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\algorithms\manualoverride.c
 	<windows.h>
-	<stdio.h>
 
