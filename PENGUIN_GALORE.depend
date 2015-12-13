@@ -68,10 +68,10 @@
 1449694291 source:c:\users\teemu\documents\github\penguins_galore\checkpeng.c
 	"main.h"
 
-1449667641 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapgenerator.c
+1449904582 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapgenerator.c
 	"main.h"
 
-1449695014 c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.h
+1450042261 c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.h
 	<time.h>
 	<stdio.h>
 	<stdlib.h>
@@ -79,22 +79,22 @@
 	<unistd.h>
 	<windows.h>
 
-1449695014 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\checkpeng.c
+1450042261 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\checkpeng.c
 	"main.h"
 
-1449695014 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\drawboard.c
+1450042261 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\drawboard.c
 	"main.h"
 
-1449695073 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\movepeng.c
+1450029269 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\movepeng.c
 	"main.h"
 
 1449748457 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.c
 	"main.h"
 
-1449695014 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\pospeng.c
+1449904582 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\pospeng.c
 	"main.h"
 
-1449692923 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapcleaner.c
+1449904582 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapcleaner.c
 	"main.h"
 
 1449693332 source:c:\users\teemu\documents\github\penguins_galore\mapcleaner.c
@@ -133,5 +133,8 @@
 	<windows.h>
 
 1450029625 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\algorithms\manualoverride.c
+	<windows.h>
+
+1450042261 source:c:\users\micha許dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\algorithms\manualoverride.c
 	<windows.h>
 

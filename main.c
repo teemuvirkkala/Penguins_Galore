@@ -72,14 +72,70 @@ int main()
         }
       DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     }
-
+i=1;
     //Moving
+    /*while(CheckEnd(NumberOfColumns, FishArray, AllPengs, PengArray)==1){
+    //Asking Player for PengID
+
+    PengID=UserEnterPengID(i);
+    if (PengID%2==i%2){
+        Spaces=UserEnterNumOfSpaces(i);
+        Dir=UserEnterDir(i);
+        printf("\n %i %i %i", PengID, Spaces, Dir);
+        switch(Dir){
+                case 1:{
+                    //go NW
+                    printf("\nYou moved to NW");
+                    MovePengNW(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                    break;
+                }
+                case 2:{
+                    //go NE
+                    printf("\nYou moved to NE");
+                    MovePengNE(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                    break;
+                }
+                case 3:{
+                    //go W
+                    printf("\nYou moved to W");
+                    MovePengW(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                    break;
+                }
+                case 4:{
+                    // go E
+                    printf("\nYou moved to E");
+                    MovePengE(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                    break;
+                }
+                case 5:{
+                    // go SW
+                    printf("\nYou moved to SW");
+                    MovePengSW(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                    break;
+                }
+                case 6:{
+                    //go SE
+                    printf("\nYou moved to SE");
+                    MovePengSE(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                    break;
+                default:{
+                    printf("\nGive me the number one more time! ");
+                }
+            }
+        }
 
 
 
+    i++;
+    }
+
+
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    };
+
+*/
 
     //PosPeng2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     //example moves
     MovePengSE(1, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
