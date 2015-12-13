@@ -28,7 +28,7 @@
 
 1447336650 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\generateboard.c
 
-1450028468 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.c
+1450032273 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.c
 	"main.h"
 
 1447336658 d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\drawboard.c
@@ -109,7 +109,7 @@
 1449904582 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\algorithms\manualoverdrive.c
 	<windows.h>
 
-1449904582 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\checkpeng.c
+1450032252 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\checkpeng.c
 	"main.h"
 
 1449904582 d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.h
@@ -120,7 +120,7 @@
 	<unistd.h>
 	<windows.h>
 
-1450028439 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\movepeng.c
+1450029269 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\movepeng.c
 	"main.h"
 
 1449904582 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\pospeng.c
@@ -130,5 +130,8 @@
 	"main.h"
 
 1449693332 source:c:\users\teemu\documents\github\penguins_galore\algorithms\manualoverdrive.c
+	<windows.h>
+
+1450029625 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\algorithms\manualoverride.c
 	<windows.h>
 

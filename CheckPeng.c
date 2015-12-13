@@ -17,11 +17,7 @@ int CheckPeng(int Row, int Col, int AllPengs, int PengArray[AllPengs][3]) {
 //Returns the number of fishes in given coordinates
 
 int CheckBoard(int Row, int Col, int NumOfCols, int FishArray[][NumOfCols]) {
-
-    int i;
-    i = FishArray[Row][Col];
-    return i;
-
+    return FishArray[Row][Col];
 }
 
 //Check if it's possible to use the tile, 1 = true, 0 = false
@@ -29,13 +25,10 @@ int CheckBoard(int Row, int Col, int NumOfCols, int FishArray[][NumOfCols]) {
 int CheckTile(int Row, int Col, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     //Check if it's possible to move to the tile == the tile isn't a zero
-    if(CheckBoard(Row, Col, NumOfCols, FishArray) != 0) {
+    if(CheckBoard(Row, Col, NumOfCols, FishArray) != 0 && CheckPeng(Row, Col, AllPengs, PengArray) == 0)
         //Check if there's already a penguin on the tile
-        if(CheckPeng(Row, Col, AllPengs, PengArray) == 0) {
-            return 1;
-        }
-    }
-    return 0;
+    return 1;
+    else return 0;
 }
 
 //Check if it's possible to move, 1 = true, 0 = false, checks the whole move at once tile by tile.

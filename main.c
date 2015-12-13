@@ -39,7 +39,7 @@ int main()
 
 
     // initializations//
-    int NumberOfRows, NumberOfColumns, AllPengs = 2, i, X, Y; //AllPengs should be the full amount of penguins in the future
+    int NumberOfRows, NumberOfColumns, AllPengs = 2, i, p, PengID, Spaces, Dir, X, Y; //AllPengs should be the full amount of penguins in the future
     //Taking data from user//
     printf("\nEnter NumberOfRows: \n");
     scanf("%i", &NumberOfRows);
@@ -61,24 +61,24 @@ int main()
     //Manual loop//
 
     //Peng placing
-   /* for (i=0;i<AllPengs;i++)
+    for (i=0;i<AllPengs;i++)
     {
         Enter:
         X=UserEnterCrdX(i);
         Y=UserEnterCrdY(i);
-        if (PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)==1)
-            continue;
+        if (PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)==1);
         else {printf("bad!\n");
         goto Enter;
         }
+      DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     }
-*/
+
     //Moving
 
 
 
 
-    PosPeng2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    //PosPeng2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     //example moves
     MovePengSE(1, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
