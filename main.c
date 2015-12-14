@@ -74,14 +74,14 @@ int main()
     }
 i=1;
     //Moving
-    /*while(CheckEnd(NumberOfColumns, FishArray, AllPengs, PengArray)==1){
+  //  while(CheckEnd(NumberOfColumns, FishArray, AllPengs, PengArray)==1){
     //Asking Player for PengID
-
+    Move:
+    if(CheckEnd(NumberOfColumns, FishArray, AllPengs, PengArray)==0){
     PengID=UserEnterPengID(i);
     if (PengID%2==i%2){
         Spaces=UserEnterNumOfSpaces(i);
         Dir=UserEnterDir(i);
-        printf("\n %i %i %i", PengID, Spaces, Dir);
         switch(Dir){
                 case 1:{
                     //go NW
@@ -127,17 +127,19 @@ i=1;
 
 
     i++;
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+  goto Move;
     }
 
 
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-    };
 
-*/
+    }
+else
+printf("Game OVER!");
 
     //PosPeng2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     //example moves
-    MovePengSE(1, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+  /*  MovePengSE(1, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
     MovePengSE(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
@@ -160,6 +162,6 @@ i=1;
 
     MovePengW(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-
+*/
     exit(0);
 }

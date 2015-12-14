@@ -61,7 +61,7 @@ int k;
         }
         else if (k%2==0 && k!=0) {
             SetConsoleTextAttribute(hConsole, 14);
-            printf("%i. [%i, %i]\n", k+1, PengArray[k][1], PengArray[k][2]);
+            printf("%i. [%i, %i]\n", k=1, PengArray[k][1], PengArray[k][2]);
         }
         else if (k%2!=0 && k!=0) {SetConsoleTextAttribute(hConsole, 12);
             printf("\t\t%i. [%i, %i]\n", k+1, PengArray[k][1], PengArray[k][2]);

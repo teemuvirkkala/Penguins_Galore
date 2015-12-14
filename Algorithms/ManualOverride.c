@@ -13,9 +13,10 @@ int UserEnterCrdX(int i)
     else {
             SetConsoleTextAttribute(hConsole, 12);
     printf("Player2\n");}
-    printf("Enter row of your %i penguin: \n", i);
-    scanf("%i", &x);
+    printf("Enter row of your %i penguin: \n", i+1);
     SetConsoleTextAttribute(hConsole, 7);
+    scanf("%i", &x);
+
     return x;
 }
 
@@ -31,7 +32,7 @@ int UserEnterCrdY(int i)
     else {
             SetConsoleTextAttribute(hConsole, 12);
     printf("Player2\n");}
-    printf("Enter column of your %i penguin: \n", i);
+    printf("Enter column of your %i penguin: \n", i+1);
         SetConsoleTextAttribute(hConsole, 7);
     scanf("%i", &y);
     return y;
@@ -42,7 +43,7 @@ int UserEnterNumOfSpaces(int i)
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     int s;
-    if (i%2==0) {
+    if (i%2!=0) {
             SetConsoleTextAttribute(hConsole, 14);
     printf("Player1\n");}
 
@@ -60,7 +61,7 @@ int UserEnterDir(int i)
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     int d;
-    if (i%2==0) {
+    if (i%2!=0) {
             SetConsoleTextAttribute(hConsole, 14);
     printf("Player1\n");}
 
@@ -77,7 +78,7 @@ int UserEnterPengID(int i){
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     int PID;
-    if (i%2==0) {
+    if (i%2!=0) {
             SetConsoleTextAttribute(hConsole, 14);
     printf("Player1\n");}
 
