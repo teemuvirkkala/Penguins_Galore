@@ -15,6 +15,7 @@ int MovePengNE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
     Col = PengArray[idRow][2];
 
     if(CheckMove(idRow, 1, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
+            Score(AllPengs, Row, Col, NumOfCols, FishArray, PengArray);
         FishArray[Row][Col] = 0;
         for(i = 0; i < Spaces; i++) {
             if(PengArray[idRow][1] % 2) {
@@ -40,6 +41,7 @@ int MovePengE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[Nu
     Col = PengArray[idRow][2];
 
     if(CheckMove(idRow, 2, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
+            Score(AllPengs, Row, Col, NumOfCols, FishArray, PengArray);
         FishArray[Row][Col] = 0;
         PengArray[idRow][2] += Spaces; //Y += Spaces
         IfMoved=1;
@@ -56,6 +58,7 @@ int MovePengSE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
     Col = PengArray[idRow][2];
 
     if(CheckMove(idRow, 3, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
+                      Score(AllPengs, Row, Col, NumOfCols, FishArray, PengArray);
         FishArray[Row][Col] = 0;
         for(i = 0; i < Spaces; i++) {
             if(PengArray[idRow][1] % 2) {
@@ -80,6 +83,7 @@ int MovePengSW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
     Col = PengArray[idRow][2];
 
     if(CheckMove(idRow, 4, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
+                        Score(AllPengs, Row, Col, NumOfCols, FishArray, PengArray);
         FishArray[Row][Col] = 0;
         for(i = 0; i < Spaces; i++) {
             if(PengArray[idRow][1] % 2 == 0) {
@@ -104,6 +108,7 @@ int MovePengW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[Nu
     Col = PengArray[idRow][2];
 
     if(CheckMove(idRow, 5, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
+                        Score(AllPengs, Row, Col, NumOfCols, FishArray, PengArray);
         FishArray[Row][Col] = 0;
         PengArray[idRow][2] -= Spaces;
       IfMoved=1;
@@ -120,6 +125,7 @@ int MovePengNW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
     Col = PengArray[idRow][2];
 
     if(CheckMove(idRow, 6, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
+                        Score(AllPengs, Row, Col, NumOfCols, FishArray, PengArray);
         FishArray[Row][Col] = 0;
         for(i = 0; i < Spaces; i++) {
             if(PengArray[idRow][1] % 2 == 0) {

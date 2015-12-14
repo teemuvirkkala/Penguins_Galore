@@ -29,6 +29,8 @@ easier to follow longer games, but still gives us the opportunity to see full ou
     int UserEnterDir(int i);
     int UserEnterCrdY(int i);
     int UserEnterCrdX(int i);
+    int UserEnterNumOfSpaces(int i);
+    int UserEnterPengID(int i);
 
 
 

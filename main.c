@@ -40,6 +40,7 @@ int main()
 
     // initializations//
     int NumberOfRows, NumberOfColumns, AllPengs = 2, i, p, PengID, Spaces, Dir, X, Y; //AllPengs should be the full amount of penguins in the future
+    int ScoreP1=0, ScoreP2=0; //Scores for players
     //Taking data from user//
     printf("\nEnter NumberOfRows: \n");
     scanf("%i", &NumberOfRows);
@@ -135,33 +136,10 @@ i=1;
 
     }
 else
-printf("Game OVER!");
-
-    //PosPeng2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-    //example moves
-  /*  MovePengSE(1, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-
-    MovePengSE(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-
-    MovePengSW(1, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-
-    MovePengSW(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-
-    MovePengNW(1, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-
-    MovePengNW(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-
-    MovePengE(1, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-
-    MovePengW(2, 2, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-*/
+{
+    system ( "cls" );
+    Score(AllPengs, 1, 1, NumberOfColumns, FishArray, PengArray);
+    printf("\nGame OVER!");
+}
     exit(0);
 }
