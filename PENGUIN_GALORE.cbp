@@ -34,10 +34,16 @@
 		<Unit filename="Algorithms/ManualOverride.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="AsciiPrinting.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="CheckPeng.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="DrawBoard.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="IntroOutro.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="MapCleaner.c">
@@ -49,13 +55,19 @@
 		<Unit filename="MovePeng.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="PlayGame.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="PosPeng.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="main.c">
+		<Unit filename="Score.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.h" />
+		<Unit filename="menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="penguins.wav">
 			<Option compile="1" />
 		</Unit>

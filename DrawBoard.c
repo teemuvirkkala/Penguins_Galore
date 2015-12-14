@@ -12,15 +12,33 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
     static int turn=1;
     system ( "cls" );
     #endif
+    //printf columns numbers
+printf("   ");                               //printf columns numbers
+for(j = 1; j < NumOfCols - 1; j++){         //
+    SetConsoleTextAttribute(hConsole, 121); //
+    printf("%i", j);                        //
+    SetConsoleTextAttribute(hConsole, 7);   //
+    printf("  ");                           //
+}                                           //
+printf("\n");                               //
 
     #ifdef DEBUG_MODE
     for (i = 0; i < NumOfRows; i++) {
     #else
     for (i = 1; i < NumOfRows - 1; i++) {
     #endif // DEBUG_MODE
-        if(i % 2 != 0)
+    SetConsoleTextAttribute(hConsole, 121);
+        if(i % 2 != 0){
+            printf("%i", i);
+            SetConsoleTextAttribute(hConsole, 7);
+            printf("  ");
+            }         // drawing row numbers
+            else {printf("%i", i);
+            SetConsoleTextAttribute(hConsole, 7);
             printf(" ");
-            //SetConsoleTextAttribute(hConsole, 7);
+            }
+                  //-||-
+            SetConsoleTextAttribute(hConsole, 7);
         #ifdef DEBUG_MODE
         for(j = 0; j < NumOfCols; j++) {
         #else
