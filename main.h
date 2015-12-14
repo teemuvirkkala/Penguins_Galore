@@ -9,6 +9,7 @@
 # include <windows.h>
 #define sleep(x) Sleep(1000 * x)
 #endif
+#define MAX_LEN 128 // for ascii printing
 
 #define TURNBYTURN_MODE
 //#define DEBUG_MODE
@@ -49,6 +50,8 @@ void MapCleaner(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols
 void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 int PosPeng(int, int, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 void PosPeng2(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
+void Intro();
+void AsciiArtPrinter(FILE *fptr);
 
 //CheckingFunctions
 int CheckPeng(int, int, int AllPengs, int PengArray[AllPengs][3]);

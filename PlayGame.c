@@ -1,42 +1,7 @@
-#define MAX_LEN 128
 #include "main.h"
 
-void AsciiArtPrinter(FILE *fptr)
+int PlayGame()
 {
-    char read_string[MAX_LEN];
-
-    while(fgets(read_string,sizeof(read_string),fptr) != NULL)
-        printf("%s",read_string);
-
-        printf("\n");
-}
-
-int main()
-{
-    //fun part start//
-//    PlaySound("resources/penguins.wav", NULL, SND_ASYNC); // Plays sound file; need to add winmm in Settings -> Compiler ->                                      //                                              ->Linker Settings
-    char *filename = "resources/penguinsgalore.txt";
-    FILE *fptr = NULL;
-    if((fptr = fopen(filename,"r")) == NULL)
-    {
-        fprintf(stderr,"error opening %s\n",filename);
-        return 1;
-    }
-    AsciiArtPrinter(fptr);
-    fclose(fptr);
-    Sleep(1000);
-    char *filename2 = "resources/peng.txt";
-    FILE *fptr2 = NULL;
-    if((fptr2 = fopen(filename2,"r")) == NULL)
-    {
-        fprintf(stderr,"error opening %s\n",filename);
-        return 1;
-    }
-    AsciiArtPrinter(fptr2);
-    fclose(fptr2);
-    Sleep(1000);
-    //fun part end//
-
 
     // initializations//
     int NumberOfRows, NumberOfColumns, AllPengs = 2, i, p, PengID, Spaces, Dir, X, Y; //AllPengs should be the full amount of penguins in the future
