@@ -13,7 +13,7 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
     system ( "cls" );
     #endif
     //printf columns numbers
-printf("   ");                               //printf columns numbers
+printf("    ");                               //printf columns numbers
 for(j = 1; j < NumOfCols - 1; j++){         //
     SetConsoleTextAttribute(hConsole, 121); //
     printf("%i", j);                        //
@@ -28,14 +28,14 @@ printf("\n");                               //
     for (i = 1; i < NumOfRows - 1; i++) {
     #endif // DEBUG_MODE
     SetConsoleTextAttribute(hConsole, 121);
-        if(i % 2 != 0){
+        if(i % 2 != 0 && i<10){
             printf("%i", i);
             SetConsoleTextAttribute(hConsole, 7);
-            printf("  ");
+            printf("   ");
             }         // drawing row numbers
             else {printf("%i", i);
             SetConsoleTextAttribute(hConsole, 7);
-            printf(" ");
+            printf("  ");
             }
                   //-||-
             SetConsoleTextAttribute(hConsole, 7);
@@ -79,7 +79,7 @@ int k;
         }
         else if (k%2==0 && k!=0) {
             SetConsoleTextAttribute(hConsole, 14);
-            printf("%i. [%i, %i]\n", k=1, PengArray[k][1], PengArray[k][2]);
+            printf("%i. [%i, %i]\n", k+1, PengArray[k][1], PengArray[k][2]);
         }
         else if (k%2!=0 && k!=0) {SetConsoleTextAttribute(hConsole, 12);
             printf("\t\t%i. [%i, %i]\n", k+1, PengArray[k][1], PengArray[k][2]);

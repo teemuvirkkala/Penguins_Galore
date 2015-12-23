@@ -17,7 +17,8 @@ int CheckPeng(int Row, int Col, int AllPengs, int PengArray[AllPengs][3]) {
 //Returns the number of fishes in given coordinates
 
 int CheckBoard(int Row, int Col, int NumOfCols, int FishArray[][NumOfCols]) {
-    return FishArray[Row][Col];
+    int i=FishArray[Row][Col];
+    return i;
 }
 
 //Check if it's possible to use the tile, 1 = true, 0 = false

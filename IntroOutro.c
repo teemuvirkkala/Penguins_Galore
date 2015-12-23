@@ -7,7 +7,6 @@ void Intro(){
     if((fptr = fopen(filename,"r")) == NULL)
     {
         fprintf(stderr,"error opening %s\n",filename);
-        return 1;
     }
     AsciiArtPrinter(fptr);
     fclose(fptr);
@@ -17,7 +16,6 @@ void Intro(){
     if((fptr2 = fopen(filename2,"r")) == NULL)
     {
         fprintf(stderr,"error opening %s\n",filename);
-        return 1;
     }
     AsciiArtPrinter(fptr2);
     fclose(fptr2);

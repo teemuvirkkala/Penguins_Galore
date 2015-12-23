@@ -17,6 +17,9 @@
 /*TURNBYTURN_MODE, Wait the player to press anything every DrawScreen() and clear the screen,
 easier to follow longer games, but still gives us the opportunity to see full output, windows only*/
 
+//Preaparation for pointers to functions
+typedef int (*Pointer)(int);
+
 //Commands for user//
     //Moving//
     void UserMoveNE (int ID, int Spaces);
@@ -52,6 +55,8 @@ int PosPeng(int, int, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][Num
 void PosPeng2(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 void Intro();
 void AsciiArtPrinter(FILE *fptr);
+int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer PointerSpaces1, Pointer PointerPengID1, Pointer PointerX2, Pointer PointerY2, Pointer PointerDir2, Pointer PointerSpaces2, Pointer PointerPengID2);
+int Score (int AllPengs, int Row, int Col, int NumOfCols, int FishArray[][NumOfCols], int PengArray[AllPengs][3]);
 
 //CheckingFunctions
 int CheckPeng(int, int, int AllPengs, int PengArray[AllPengs][3]);
