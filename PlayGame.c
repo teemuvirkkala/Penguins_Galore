@@ -6,13 +6,31 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
     // initializations//
     int NumberOfRows, NumberOfColumns, AllPengs = 2, i, p, PengID, Spaces, Dir, X, Y; //AllPengs should be the full amount of penguins in the future
     //Taking data from user//
-    printf("\nEnter NumberOfRows: \n");
+    printf("\nSet board:");
+    printf("\n1. Generate your own board");
+    printf("\n2. Read board from file");
+    scanf("%i", &i);
+
+    switch(i){
+    case 1: {
+     printf("\nEnter NumberOfRows: \n");
     scanf("%i", &NumberOfRows);
     NumberOfRows += 2;
 
     printf("Enter NumberOfColumns: \n");
     scanf("%i", &NumberOfColumns);
     NumberOfColumns += 2;
+
+break;
+
+    }
+//case2
+
+
+    }
+
+
+
 
     int FishArray[NumberOfRows][NumberOfColumns]; //surrounded my 0 fishes floes
     MapCleaner(NumberOfRows, NumberOfColumns, FishArray);
@@ -33,7 +51,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
         if(PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)==1)
         DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
         else {
-            printf("You violated the rules! Try to place penguin again!");
+            printf("You violated the rules! Try to place penguin again!\n");
             goto Enter1;
         }
         Enter2:
@@ -42,7 +60,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
         if(PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)==1)
             DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
         else {
-            printf("You violated the rules! Try to place penguin again!");
+            printf("You violated the rules! Try to place penguin again!\n");
             goto Enter2;
         }
     }

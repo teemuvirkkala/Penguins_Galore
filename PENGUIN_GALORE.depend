@@ -112,7 +112,7 @@
 1450898356 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\checkpeng.c
 	"main.h"
 
-1451086504 d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.h
+1451092597 d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\main.h
 	<time.h>
 	<stdio.h>
 	<stdlib.h>
@@ -120,7 +120,7 @@
 	<unistd.h>
 	<windows.h>
 
-1451085962 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\movepeng.c
+1451092597 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\movepeng.c
 	"main.h"
 
 1449904582 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\pospeng.c
@@ -150,7 +150,7 @@
 1450129991 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\asciiprinting.c
 	"main.h"
 
-1450893235 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\menu.c
+1451092597 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\menu.c
 	"main.h"
 
 1451086465 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\playgame.c
