@@ -4,7 +4,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
 {
 
     // initializations//
-    int NumberOfRows, NumberOfColumns, AllPengs = 2, i, p, PengID, Spaces, Dir, X, Y; //AllPengs should be the full amount of penguins in the future
+    int NumberOfRows, NumberOfColumns, TempPengs, AllPengs, i, p, PengID, Spaces, Dir, X, Y; //AllPengs should be the full amount of penguins in the future
     //Taking data from user//
     printf("\nSet board:");
     printf("\n1. Generate your own board");
@@ -21,10 +21,13 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
     scanf("%i", &NumberOfColumns);
     NumberOfColumns += 2;
 
-break;
-
+    printf("Enter of penguins for each player: \n");
+    scanf("%i", &TempPengs);
+    AllPengs=TempPengs*2;
+    break;
     }
 //case2
+
 
 
     }
@@ -42,26 +45,34 @@ break;
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     //Main loop should go here
     //Manual loop//
-
+i=0;
     //Peng placing
-    for(i=0;i+1<AllPengs;i++){
-        Enter1:
+    Enter1:
+    while(i<AllPengs){
         X=PointerX1(i);
         Y=PointerY1(i);
-        if(PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)==1)
+        if(PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)==1){
         DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+        i++;
+        goto Enter2;
+        }
         else {
             printf("You violated the rules! Try to place penguin again!\n");
             goto Enter1;
         }
-        Enter2:
-        X=PointerX2(i+1);
-        Y=PointerY2(i+1);
-        if(PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)==1)
-            DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    }
+    Enter2:
+    while(i<AllPengs){
+        X=PointerX2(i);
+        Y=PointerY2(i);
+        if(PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)==1){
+        DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+        i++;
+        goto Enter1;
+        }
         else {
             printf("You violated the rules! Try to place penguin again!\n");
-            goto Enter2;
+            goto Enter1;
         }
     }
 
