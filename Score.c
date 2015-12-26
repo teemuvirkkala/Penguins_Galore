@@ -1,12 +1,12 @@
 #include "main.h"
 
-int Score(int AllPengs, int Row, int Col, int NumOfCols, int FishArray[][NumOfCols], int PengArray[AllPengs][3]){
+int Score(int AllPengs, int idRow, int Row, int Col, int NumOfCols, int FishArray[][NumOfCols], int PengArray[][3]){
 
-    int ScoreP1=0, ScoreP2=0;
+    static int ScoreP1, ScoreP2;
 
 if(CheckEnd(NumOfCols, FishArray, AllPengs, PengArray)==0){
 
-    if(AllPengs%2==0) {ScoreP1+=CheckBoard(Row, Col, NumOfCols, FishArray);
+    if(idRow%2==0) {ScoreP1+=CheckBoard(Row, Col, NumOfCols, FishArray);
     printf("\nNow Player1 has %i points.\n", ScoreP1);
 getch();
     }
@@ -16,11 +16,8 @@ getch();
     }
 }
 else{
-    if (ScoreP1>ScoreP2) {
-            printf("Player1 won! with %i points!", ScoreP1);
-    }
+    if (ScoreP1>ScoreP2) printf("Player1 won! with %i points!", ScoreP1);
     else if(ScoreP1==ScoreP2) printf("It's a tie! Both players have %i points!", ScoreP1);
     else printf("Player2 won! with %i points!", ScoreP2);
-
 }
 }

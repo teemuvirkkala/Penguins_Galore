@@ -3,6 +3,9 @@
 void main(){
 
     Intro();
+
+
+
 Pointer PointerX1, PointerY1, PointerDir1, PointerSpaces1, PointerPengID1, PointerX2, PointerY2, PointerDir2, PointerSpaces2, PointerPengID2;
     int menu,p;
     printf("What do you want to do? ");

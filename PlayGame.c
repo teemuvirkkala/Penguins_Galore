@@ -180,7 +180,7 @@ i=1;
     }
 
     system ( "cls" );
-    Score(AllPengs, 1, 1, NumberOfColumns, FishArray, PengArray);
+    Score(AllPengs, 0, 1, 1, NumberOfColumns, FishArray, PengArray);
     printf("\nGame OVER!");
     exit(0);
 }

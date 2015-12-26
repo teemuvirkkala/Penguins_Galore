@@ -15,8 +15,6 @@ int MovePengNE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
     Col = PengArray[idRow][2];
 
     if(CheckMove(idRow, 1, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
-            Score(AllPengs, Row, Col, NumOfCols, FishArray, PengArray);
-        FishArray[Row][Col] = 0;
         for(i = 0; i < Spaces; i++) {
             if(PengArray[idRow][1] % 2) {
                 (PengArray[idRow][1])--; //X -= 1
@@ -27,6 +25,8 @@ int MovePengNE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
                 IfMoved=1;
             }
         }
+        Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumOfCols, FishArray, PengArray);
+        FishArray[Row][Col] = 0;
     } //if the move fails inform player somehow?
     return IfMoved;
 }
@@ -41,10 +41,11 @@ int MovePengE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[Nu
     Col = PengArray[idRow][2];
 
     if(CheckMove(idRow, 2, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
-            Score(AllPengs, Row, Col, NumOfCols, FishArray, PengArray);
-        FishArray[Row][Col] = 0;
+
         PengArray[idRow][2] += Spaces; //Y += Spaces
         IfMoved=1;
+        Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumOfCols, FishArray, PengArray);
+        FishArray[Row][Col] = 0;
     }
     return IfMoved;
 }
@@ -58,8 +59,7 @@ int MovePengSE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
     Col = PengArray[idRow][2];
 
     if(CheckMove(idRow, 3, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
-                      Score(AllPengs, Row, Col, NumOfCols, FishArray, PengArray);
-        FishArray[Row][Col] = 0;
+
         for(i = 0; i < Spaces; i++) {
             if(PengArray[idRow][1] % 2) {
                 (PengArray[idRow][1])++; //X += 1
@@ -70,6 +70,8 @@ int MovePengSE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
               IfMoved=1;
             }
         }
+        Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumOfCols, FishArray, PengArray);
+        FishArray[Row][Col] = 0;
     } //if the move fails inform player somehow?
     return IfMoved;
 }
@@ -83,8 +85,7 @@ int MovePengSW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
     Col = PengArray[idRow][2];
 
     if(CheckMove(idRow, 4, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
-                        Score(AllPengs, Row, Col, NumOfCols, FishArray, PengArray);
-        FishArray[Row][Col] = 0;
+
         for(i = 0; i < Spaces; i++) {
             if(PengArray[idRow][1] % 2 == 0) {
                 (PengArray[idRow][1])++; //X += 1
@@ -95,6 +96,8 @@ int MovePengSW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
               IfMoved=1;
             }
         }
+        Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumOfCols, FishArray, PengArray);
+        FishArray[Row][Col] = 0;
     } //if the move fails inform player somehow?
     return IfMoved;
 }
@@ -108,10 +111,11 @@ int MovePengW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[Nu
     Col = PengArray[idRow][2];
 
     if(CheckMove(idRow, 5, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
-                        Score(AllPengs, Row, Col, NumOfCols, FishArray, PengArray);
-        FishArray[Row][Col] = 0;
+
         PengArray[idRow][2] -= Spaces;
       IfMoved=1;
+      Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumOfCols, FishArray, PengArray);
+        FishArray[Row][Col] = 0;
     }
     return IfMoved;
 }
@@ -125,8 +129,7 @@ int MovePengNW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
     Col = PengArray[idRow][2];
 
     if(CheckMove(idRow, 6, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
-                        Score(AllPengs, Row, Col, NumOfCols, FishArray, PengArray);
-        FishArray[Row][Col] = 0;
+
         for(i = 0; i < Spaces; i++) {
             if(PengArray[idRow][1] % 2 == 0) {
                 (PengArray[idRow][1])--; //X -= 1
@@ -137,6 +140,8 @@ int MovePengNW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
               IfMoved=1;
             }
         }
+        Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumOfCols, FishArray, PengArray);
+        FishArray[Row][Col] = 0;
     } //if the move fails inform player somehow?
     return IfMoved;
 
