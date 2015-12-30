@@ -9,7 +9,6 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
     #ifdef TURNBYTURN_MODE
-    static int turn=1;
     system ( "cls" );
     #endif
 
@@ -69,6 +68,14 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
     }
     printf("\n\n");
 
+    SetConsoleTextAttribute(hConsole, 7);
+
+}
+
+void PrintCoords(int AllPengs, int PengArray[AllPengs][3]) {
+    HANDLE  hConsole;
+    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
     //printf coords of pengs under map
     int k;
     for(k = 0; k < AllPengs; k++) {
@@ -83,11 +90,15 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
     }
 
     SetConsoleTextAttribute(hConsole, 7);
+}
 
-    #ifdef TURNBYTURN_MODE
+void TurnCounter(int x) {
+    static int turn = 1;
+
     printf("Turn %d\n", turn);
-    turn++;
+    if(x == 1) {
+        turn++;
+    }
     printf("Press any key to go to next turn\n");
     getch();
-    #endif
 }
