@@ -171,3 +171,49 @@
 1450705877 source:c:\users\micha³\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\playgame.c
 	"main.h"
 
+1451505077 source:c:\users\virkkte\documents\github\penguins_galore\algorithms\manualoverride.c
+	<windows.h>
+	<string.h>
+	<stdio.h>
+
+1451409043 source:c:\users\virkkte\documents\github\penguins_galore\asciiprinting.c
+	"main.h"
+
+1451505633 c:\users\virkkte\documents\github\penguins_galore\main.h
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<unistd.h>
+	<windows.h>
+
+1451504764 source:c:\users\virkkte\documents\github\penguins_galore\checkpeng.c
+	"main.h"
+
+1451506302 source:c:\users\virkkte\documents\github\penguins_galore\drawboard.c
+	"main.h"
+
+1451409043 source:c:\users\virkkte\documents\github\penguins_galore\introoutro.c
+	"main.h"
+
+1451408865 source:c:\users\virkkte\documents\github\penguins_galore\mapcleaner.c
+	"main.h"
+
+1451408865 source:c:\users\virkkte\documents\github\penguins_galore\mapgenerator.c
+	"main.h"
+
+1451502900 source:c:\users\virkkte\documents\github\penguins_galore\menu.c
+	"main.h"
+
+1451409043 source:c:\users\virkkte\documents\github\penguins_galore\movepeng.c
+	"main.h"
+
+1451505870 source:c:\users\virkkte\documents\github\penguins_galore\playgame.c
+	"main.h"
+
+1451501748 source:c:\users\virkkte\documents\github\penguins_galore\pospeng.c
+	"main.h"
+
+1451505594 source:c:\users\virkkte\documents\github\penguins_galore\score.c
+	"main.h"
+
