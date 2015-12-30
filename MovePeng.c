@@ -8,7 +8,7 @@
 
 int MovePengNE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
-    int i, idRow, Row, Col, IfMoved=0;
+    int i, idRow, Row, Col, IfMoved = 0;
 
     idRow = WhichPenguin(ID, AllPengs, PengArray); //Search for the right row in the array so we don't have to check it every incrementation of Spaces
     Row = PengArray[idRow][1];
@@ -19,10 +19,10 @@ int MovePengNE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
             if(PengArray[idRow][1] % 2) {
                 (PengArray[idRow][1])--; //X -= 1
                 (PengArray[idRow][2])++; //Y += 1
-                IfMoved=1;
+                IfMoved = 1;
             } else {
                 (PengArray[idRow][1])--; //X -= 1
-                IfMoved=1;
+                IfMoved = 1;
             }
         }
         Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumOfCols, FishArray, PengArray);
@@ -34,7 +34,7 @@ int MovePengNE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
 
 int MovePengE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
-    int idRow, Row, Col, IfMoved=0;
+    int idRow, Row, Col, IfMoved = 0;
 
     idRow = WhichPenguin(ID, AllPengs, PengArray); //Search for the right row in the array so we don't have to check it every incrementation of Spaces
     Row = PengArray[idRow][1];
@@ -43,7 +43,7 @@ int MovePengE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[Nu
     if(CheckMove(idRow, 2, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
 
         PengArray[idRow][2] += Spaces; //Y += Spaces
-        IfMoved=1;
+        IfMoved = 1;
         Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumOfCols, FishArray, PengArray);
         FishArray[Row][Col] = 0;
     }
@@ -52,7 +52,7 @@ int MovePengE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[Nu
 
 int MovePengSE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
-    int i, idRow, Row, Col, IfMoved=0;
+    int i, idRow, Row, Col, IfMoved = 0;
 
     idRow = WhichPenguin(ID, AllPengs, PengArray); //Search for the right row in the array so we don't have to check it every incrementation of Spaces
     Row = PengArray[idRow][1];
@@ -64,10 +64,10 @@ int MovePengSE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
             if(PengArray[idRow][1] % 2) {
                 (PengArray[idRow][1])++; //X += 1
                 (PengArray[idRow][2])++; //Y += 1
-              IfMoved=1;
+              IfMoved = 1;
             } else {
                 (PengArray[idRow][1])++; //Y += 1
-              IfMoved=1;
+              IfMoved = 1;
             }
         }
         Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumOfCols, FishArray, PengArray);
@@ -78,7 +78,7 @@ int MovePengSE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
 
 int MovePengSW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
-    int i, idRow, Row, Col, IfMoved=0;
+    int i, idRow, Row, Col, IfMoved = 0;
 
     idRow = WhichPenguin(ID, AllPengs, PengArray); //Search for the right row in the array so we don't have to check it every incrementation of Spaces
     Row = PengArray[idRow][1];
@@ -90,10 +90,10 @@ int MovePengSW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
             if(PengArray[idRow][1] % 2 == 0) {
                 (PengArray[idRow][1])++; //X += 1
                 (PengArray[idRow][2])--; //Y -= 1
-              IfMoved=1;
+              IfMoved = 1;
             } else {
                 (PengArray[idRow][1])++; //Y += 1
-              IfMoved=1;
+              IfMoved = 1;
             }
         }
         Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumOfCols, FishArray, PengArray);
@@ -104,7 +104,7 @@ int MovePengSW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
 
 int MovePengW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
-    int idRow, Row, Col, IfMoved=0;
+    int idRow, Row, Col, IfMoved = 0;
 
     idRow = WhichPenguin(ID, AllPengs, PengArray); //Search for the right row in the array so we don't have to check it every incrementation of Spaces
     Row = PengArray[idRow][1];
@@ -113,7 +113,7 @@ int MovePengW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[Nu
     if(CheckMove(idRow, 5, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
 
         PengArray[idRow][2] -= Spaces;
-      IfMoved=1;
+      IfMoved = 1;
       Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumOfCols, FishArray, PengArray);
         FishArray[Row][Col] = 0;
     }
@@ -122,7 +122,7 @@ int MovePengW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[Nu
 
 int MovePengNW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
-    int i, idRow, Row, Col, IfMoved=0;
+    int i, idRow, Row, Col, IfMoved = 0;
 
     idRow = WhichPenguin(ID, AllPengs, PengArray); //Search for the right row in the array so we don't have to check it every incrementation of Spaces
     Row = PengArray[idRow][1];
@@ -134,7 +134,7 @@ int MovePengNW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
             if(PengArray[idRow][1] % 2 == 0) {
                 (PengArray[idRow][1])--; //X -= 1
                 (PengArray[idRow][2])--; //Y -= 1
-             IfMoved=1;
+             IfMoved = 1;
             } else {
                 (PengArray[idRow][1])--; //Y += 1
               IfMoved=1;
