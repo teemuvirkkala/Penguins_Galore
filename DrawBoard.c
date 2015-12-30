@@ -12,15 +12,16 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
     static int turn=1;
     system ( "cls" );
     #endif
+
     //printf columns numbers
-printf("    ");                               //printf columns numbers
-for(j = 1; j < NumOfCols - 1; j++){         //
-    SetConsoleTextAttribute(hConsole, 121); //
-    printf("%i", j);                        //
-    SetConsoleTextAttribute(hConsole, 7);   //
-    printf("  ");                           //
-}                                           //
-printf("\n");                               //
+    printf("    ");                              //printf columns numbers
+    for(j = 1; j < NumOfCols - 1; j++) {         //
+        SetConsoleTextAttribute(hConsole, 121); //
+        printf("%i", j);                        //
+        SetConsoleTextAttribute(hConsole, 7);   //
+        printf("  ");                           //
+    }                                           //
+    printf("\n");                               //
 
     #ifdef DEBUG_MODE
     for (i = 0; i < NumOfRows; i++) {
@@ -28,27 +29,28 @@ printf("\n");                               //
     for (i = 1; i < NumOfRows - 1; i++) {
     #endif // DEBUG_MODE
     SetConsoleTextAttribute(hConsole, 121);
-        if(i % 2 != 0 && i<10){
+        if(i % 2 != 0 && i<10) {
             printf("%i", i);
             SetConsoleTextAttribute(hConsole, 7);
             printf("   ");
-            }         // drawing row numbers
-            else {printf("%i", i);
+        }         // drawing row numbers
+        else {
+            printf("%i", i);
             SetConsoleTextAttribute(hConsole, 7);
             printf("  ");
-            }
+        }
                   //-||-
-            SetConsoleTextAttribute(hConsole, 7);
+        SetConsoleTextAttribute(hConsole, 7);
         #ifdef DEBUG_MODE
         for(j = 0; j < NumOfCols; j++) {
         #else
         for(j = 1; j < NumOfCols - 1; j++) {
         #endif // DEBUG_MODE
             if(CheckPeng(i, j, AllPengs, PengArray)) { //Check if there's a penguin in given coordinates
-                if(CheckPeng(i, j, AllPengs, PengArray) % 2){
+                if(CheckPeng(i, j, AllPengs, PengArray) % 2) {
                     SetConsoleTextAttribute(hConsole, 14);  //yellow
                     printf("P  ");
-                } else{
+                } else {
                     SetConsoleTextAttribute(hConsole, 12);  //red
                     printf("P  ");
                 }
@@ -59,9 +61,7 @@ printf("\n");                               //
                 #else
                 printf("   ");
                 #endif // DEBUG_MODE
-
             } else {
-
                 printf("%i  ", FishArray[i][j]); //If not just print the amount of fishes
             }
         }
@@ -69,24 +69,20 @@ printf("\n");                               //
     }
     printf("\n\n");
 
-//printf coords of pengs under map
-int k;
-        for(k = 0; k < AllPengs; k++) {
-        if(PengArray[k][1]==0 && PengArray[k][2]==0) printf(" ");
-        else if (k%2==0 && k==0) {                                  //workaround for printing coords of no. 0 peng.
-        SetConsoleTextAttribute(hConsole, 14);
-        printf("%i. [%i, %i]\n", k+1, PengArray[k][1], PengArray[k][2]);
-        }
-        else if (k%2==0 && k!=0) {
+    //printf coords of pengs under map
+    int k;
+    for(k = 0; k < AllPengs; k++) {
+        if (k % 2 == 0) {
             SetConsoleTextAttribute(hConsole, 14);
-            printf("%i. [%i, %i]\n", k+1, PengArray[k][1], PengArray[k][2]);
+            printf("%i. [%i, %i]", k + 1, PengArray[k][1], PengArray[k][2]);
         }
-        else if (k%2!=0 && k!=0) {SetConsoleTextAttribute(hConsole, 12);
-            printf("\t\t%i. [%i, %i]\n", k+1, PengArray[k][1], PengArray[k][2]);
+        else if (k % 2!= 0 && k != 0) {
+            SetConsoleTextAttribute(hConsole, 12);
+            printf("\t\t%i. [%i, %i]\n", k + 1, PengArray[k][1], PengArray[k][2]);
         }
     }
 
-SetConsoleTextAttribute(hConsole, 7);
+    SetConsoleTextAttribute(hConsole, 7);
 
     #ifdef TURNBYTURN_MODE
     printf("Turn %d\n", turn);
