@@ -66,18 +66,28 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
         }
         printf("\n\n");
     }
-    printf("\n\n");
+    printf("\n");
 
     SetConsoleTextAttribute(hConsole, 7);
 
 }
 
-void PrintCoords(int AllPengs, int PengArray[AllPengs][3]) {
+void PrintCoords(int score1, int score2, int AllPengs, int PengArray[AllPengs][3]) {
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
     //printf coords of pengs under map
     int k;
+
+    SetConsoleTextAttribute(hConsole, 14);
+    printf("Player 1");
+    SetConsoleTextAttribute(hConsole, 12);
+    printf("\t\tPlayer 2\n");
+    SetConsoleTextAttribute(hConsole, 14);
+    printf("Score: %d", score1);
+    SetConsoleTextAttribute(hConsole, 12);
+    printf("\t\tScore: %d\n", score2);
+
     for(k = 0; k < AllPengs; k++) {
         if (k % 2 == 0) {
             SetConsoleTextAttribute(hConsole, 14);
@@ -92,13 +102,10 @@ void PrintCoords(int AllPengs, int PengArray[AllPengs][3]) {
     SetConsoleTextAttribute(hConsole, 7);
 }
 
-void TurnCounter(int x) {
+int TurnCounter(int x) {
     static int turn = 1;
-
-    printf("Turn %d\n", turn);
     if(x == 1) {
         turn++;
     }
-    printf("Press any key to go to next turn\n");
-    getch();
+    return turn;
 }
