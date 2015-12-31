@@ -3,7 +3,7 @@
 int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer PointerSpaces1, Pointer PointerPengID1, Pointer PointerX2, Pointer PointerY2, Pointer PointerDir2, Pointer PointerSpaces2, Pointer PointerPengID2) {
 
     // initializations//
-    int NumberOfRows, NumberOfColumns, TempPengs, AllPengs, i, PengID, Spaces, Dir, X, Y, moved; //AllPengs should be the full amount of penguins in the future
+    int NumberOfRows, NumberOfColumns, TempPengs, AllPengs, i, PengID, Spaces, Dir, X, Y, moved, idRow, score1 = 0, score2 = 0; //AllPengs should be the full amount of penguins in the future
     //Taking data from user//
     printf("Set board:");
     printf("\n1. Generate your own board");
@@ -58,9 +58,9 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
         }
     }
 
-    PrintCoords(AllPengs, PengArray);
+    PrintCoords(score1, score2, AllPengs, PengArray);
     #ifdef TURNBYTURN_MODE
-    TurnCounter(0);
+    printf("Turn %d\n", TurnCounter(0));
     #endif
     i = 1;
     moved = 0;
@@ -147,23 +147,34 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
         }
         Sleep(1000);
         DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-        PrintCoords(AllPengs, PengArray);
+
         if(moved == 1) {
             #ifdef TURNBYTURN_MODE
             TurnCounter(1);
             #endif
+            idRow = WhichPenguin(PengID, AllPengs, PengArray);
+            if(i % 2) {
+                score1 = Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumberOfColumns, FishArray, PengArray);
+            } else if(i % 2 == 0) {
+                score2 = Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumberOfColumns, FishArray, PengArray);
+            }
             i++;
             moved = 0;
-        } else {
-            #ifdef TURNBYTURN_MODE
-            TurnCounter(0);
-            #endif
         }
 
+        PrintCoords(score1, score2, AllPengs, PengArray);
+        printf("Turn %d\n", TurnCounter(0));
+        printf("Press any key to go to next turn\n");
+        getch();
     }
 
     system ( "cls" );
-    Score(AllPengs, 0, 1, 1, NumberOfColumns, FishArray, PengArray);
+    if (score1 > score2)
+        printf("Player1 won! with %i points!", score1);
+    else if(score1 == score2)
+        printf("It's a tie! Both players have %i points!", score1);
+    else
+        printf("Player2 won! with %i points!", score2);
     printf("\nGame OVER!");
     exit(0);
 }
