@@ -7,6 +7,11 @@ int PosPeng(int Row, int Col, int NumOfRows, int NumOfCols, int FishArray[NumOfR
 
     int i;
 
+    if(Row < 0 || Row > NumOfRows )
+        return 0;
+    else if(Col < 0 || Col > NumOfCols)
+        return 0;
+
     for(i = 0; i < AllPengs; i++) {
         if(PengArray[i][0] == 0) {
             if(FishArray[Row][Col] == 1 && CheckPeng(Row, Col, AllPengs, PengArray) == 0) {
