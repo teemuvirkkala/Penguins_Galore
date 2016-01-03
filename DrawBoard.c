@@ -16,9 +16,9 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
     printf("    ");                              //printf columns numbers
     for(j = 1; j < NumOfCols - 1; j++) {         //
         SetConsoleTextAttribute(hConsole, 121); //
-        printf("%i", j);                        //
+        printf("%i ", j);                        //
         SetConsoleTextAttribute(hConsole, 7);   //
-        printf("  ");                           //
+        printf(" ");                           //
     }                                           //
     printf("\n");                               //
 
@@ -28,16 +28,11 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
     for (i = 1; i < NumOfRows - 1; i++) {
     #endif // DEBUG_MODE
     SetConsoleTextAttribute(hConsole, 121);
-        if(i % 2 != 0 && i<10) {
-            printf("%i", i);
+
+            printf("%3i", i);
             SetConsoleTextAttribute(hConsole, 7);
-            printf("   ");
-        }         // drawing row numbers
-        else {
-            printf("%i", i);
-            SetConsoleTextAttribute(hConsole, 7);
-            printf("  ");
-        }
+            if(i%2==1) printf(" ");
+
                   //-||-
         SetConsoleTextAttribute(hConsole, 7);
         #ifdef DEBUG_MODE
@@ -48,10 +43,10 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
             if(CheckPeng(i, j, AllPengs, PengArray)) { //Check if there's a penguin in given coordinates
                 if(CheckPeng(i, j, AllPengs, PengArray) % 2) {
                     SetConsoleTextAttribute(hConsole, 14);  //yellow
-                    printf("P  ");
+                    printf(" P ");
                 } else {
                     SetConsoleTextAttribute(hConsole, 12);  //red
-                    printf("P  ");
+                    printf(" P ");
                 }
                 SetConsoleTextAttribute(hConsole, 7);       //normal
             } else if(FishArray[i][j] == 0) {
@@ -61,7 +56,7 @@ void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]
                 printf("   ");
                 #endif // DEBUG_MODE
             } else {
-                printf("%i  ", FishArray[i][j]); //If not just print the amount of fishes
+                printf(" %i ", FishArray[i][j]); //If not just print the amount of fishes
             }
         }
         printf("\n\n");
