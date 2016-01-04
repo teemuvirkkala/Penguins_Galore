@@ -18,15 +18,15 @@
 easier to follow longer games, but still gives us the opportunity to see full output, windows only*/
 
 //Preaparation for pointers to functions
-typedef int (*Pointer)(int,int,int**,int,int**);
+typedef int (*Pointer)(int, int, int**, int, int**);
 
 //Commands for user//
 //Manual//
-int UserEnterDir(int i, int, int**, int, int**);
-int UserEnterCrdY(int i, int, int**, int, int**);
-int UserEnterCrdX(int i, int, int**, int, int**);
-int UserEnterNumOfSpaces(int i, int, int**, int, int**);
-int UserEnterPengID(int i, int, int**, int, int**);
+int UserEnterDir(int, int, int**, int, int**);
+int UserEnterCrdY(int, int, int**, int, int**);
+int UserEnterCrdX(int, int, int**, int, int**);
+int UserEnterNumOfSpaces(int, int, int**, int, int**);
+int UserEnterPengID(int, int, int**, int, int**);
 
 //Dummy
 int DummyDir(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
@@ -46,7 +46,7 @@ void PosPeng2(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols],
 void Intro();
 int TurnCounter(int);
 void AsciiArtPrinter(FILE *fptr);
-int PlayGame(int P1ID, Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer PointerSpaces1, Pointer PointerPengID1, int P2ID, Pointer PointerX2, Pointer PointerY2, Pointer PointerDir2, Pointer PointerSpaces2, Pointer PointerPengID2);
+int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer PointerSpaces1, Pointer PointerPengID1, Pointer PointerX2, Pointer PointerY2, Pointer PointerDir2, Pointer PointerSpaces2, Pointer PointerPengID2);
 int Score (int, int, int, int NumOfCols, int FishArray[][NumOfCols]);
 
 //Saving and Loading
