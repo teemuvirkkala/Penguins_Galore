@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 
-int UserEnterCrdX(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int UserEnterCrdX(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     int x;
 
@@ -12,7 +12,7 @@ int UserEnterCrdX(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCo
     return x;
 }
 
-int UserEnterCrdY(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int UserEnterCrdY(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     int y;
 
@@ -22,16 +22,16 @@ int UserEnterCrdY(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCo
     return y;
 }
 
-int UserEnterNumOfSpaces(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int UserEnterNumOfSpaces(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
-    int s;
+    int sp;
 
     printf("Enter number of spaces: \n");
-    scanf("%i", &s);
-    return s;
+    scanf("%i", &sp);
+    return sp;
 }
 
-int UserEnterDir(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int UserEnterDir(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     int d;
 
@@ -41,12 +41,12 @@ int UserEnterDir(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCol
     return d;
 }
 
-int UserEnterPengID(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int UserEnterPengID(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
-    int PID;
+    int PengID;
 
     printf("Enter which penguin you want to use: \n");
-    scanf("%i", &PID);
+    scanf("%i", &PengID);
 
-    return PID;
+    return PengID;
 }

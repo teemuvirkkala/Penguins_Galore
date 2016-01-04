@@ -37,6 +37,7 @@
 		<Unit filename="Algorithms/ManualOverride.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Algorithms/user.h" />
 		<Unit filename="AsciiPrinting.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -77,7 +78,6 @@
 		<Unit filename="penguins.wav">
 			<Option compile="1" />
 		</Unit>
-		<Unit filename="user.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

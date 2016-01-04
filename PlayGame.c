@@ -5,7 +5,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
     // initializations//
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    int NumberOfRows, NumberOfColumns, AllPengs = 0, i, PengID, Spaces, Dir, X, Y, moved, idRow, score1 = 0, score2 = 0; //AllPengs should be the full amount of penguins in the future
+    int NumberOfRows, NumberOfColumns, AllPengs = 0, i, PengID = 0, Spaces = 0, Dir, X, Y, moved, idRow, score1 = 0, score2 = 0; //AllPengs should be the full amount of penguins in the future
     //Taking data from user//
     printf("Set board:");
     printf("\n1. Generate your own board");
@@ -55,7 +55,6 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             LoadBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
             break;
         }
-        //case2
     }
 
     if(score1 == 0 && score2 == 0) {
@@ -69,13 +68,13 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             if(i % 2 == 0) {
                 SetConsoleTextAttribute(hConsole, 14);
                 printf("Player1\n");
-                X = PointerX1(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-                Y = PointerY1(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                X = PointerX1(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                Y = PointerY1(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
             } else if(i % 2) {
                 SetConsoleTextAttribute(hConsole, 12);
                 printf("Player2\n");
-                X = PointerX2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-                Y = PointerY2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                X = PointerX2(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                Y = PointerY2(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
             }
 
             if(PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray) == 1) {
@@ -102,24 +101,24 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
         if(i % 2) {
             SetConsoleTextAttribute(hConsole, 14);
             printf("Player1\n");
-            PengID = PointerPengID1(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+            PengID = PointerPengID1(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
         } else if(i % 2 == 0) {
             SetConsoleTextAttribute(hConsole, 12);
             printf("Player2\n");
-            PengID = PointerPengID2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+            PengID = PointerPengID2(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
         }
 
         if (PengID % 2 == i % 2) {
             if(i % 2) {
                 SetConsoleTextAttribute(hConsole, 14);
                 printf("Player1\n");
-                Spaces = PointerSpaces1(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-                Dir = PointerDir1(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                Spaces = PointerSpaces1(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                Dir = PointerDir1(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
             } else if(i % 2 == 0) {
                 SetConsoleTextAttribute(hConsole, 12);
                 printf("Player2\n");
-                Spaces = PointerSpaces2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-                Dir = PointerDir2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                Spaces = PointerSpaces2(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                Dir = PointerDir2(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
             }
 
             SetConsoleTextAttribute(hConsole, 7);
