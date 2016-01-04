@@ -27,7 +27,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             NumberOfRows = LoadRoC(1);
             NumberOfColumns = LoadRoC(2);
             AllPengs = LoadRoC(3);
-            TurnCounter(LoadRoC(4));
+            i = LoadRoC(4);
             score1 = LoadRoC(5);
             score2 = LoadRoC(6);
             break;
@@ -62,7 +62,6 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
         MapCleaner(AllPengs, 3, PengArray);
         DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
-        //Main loop should go here
         //Manual loop//
         i = 0;
         //Peng placing
@@ -89,38 +88,38 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
                 DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
             }
         }
+        i = 1;
     }
 
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     PrintCoords(score1, score2, AllPengs, PengArray);
     #ifdef TURNBYTURN_MODE
-    printf("Turn %d\n", TurnCounter(-1));
+    printf("Turn %d\n", i);
     #endif
-    i = TurnCounter(-1);
     moved = 0;
     //Moving
     while(CheckEnd(NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
         if(i % 2) {
             SetConsoleTextAttribute(hConsole, 14);
             printf("Player1\n");
-            PengID = PointerPengID1(i, NumberOfColumns, FishArray, AllPengs, PengArray);
+            PengID = PointerPengID1(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
         } else if(i % 2 == 0) {
             SetConsoleTextAttribute(hConsole, 12);
             printf("Player2\n");
-            PengID = PointerPengID2(i, NumberOfColumns, FishArray, AllPengs, PengArray);
+            PengID = PointerPengID2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
         }
 
         if (PengID % 2 == i % 2) {
             if(i % 2) {
                 SetConsoleTextAttribute(hConsole, 14);
                 printf("Player1\n");
-                Spaces = PointerSpaces1(i, NumberOfColumns, FishArray, AllPengs, PengArray);
-                Dir = PointerDir1(i, NumberOfColumns, FishArray, AllPengs, PengArray);
+                Spaces = PointerSpaces1(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                Dir = PointerDir1(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
             } else if(i % 2 == 0) {
                 SetConsoleTextAttribute(hConsole, 12);
                 printf("Player2\n");
-                Spaces = PointerSpaces2(i, NumberOfColumns, FishArray, AllPengs, PengArray);
-                Dir = PointerDir2(i, NumberOfColumns, FishArray, AllPengs, PengArray);
+                Spaces = PointerSpaces2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                Dir = PointerDir2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
             }
 
             SetConsoleTextAttribute(hConsole, 7);
@@ -192,9 +191,6 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
         DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
         if(moved == 1) {
-            #ifdef TURNBYTURN_MODE
-            TurnCounter(0);
-            #endif
             idRow = WhichPenguin(PengID, AllPengs, PengArray);
             if(i % 2) {
                 score1 = Score(score1, PengArray[idRow][1], PengArray[idRow][2], NumberOfColumns, FishArray);
@@ -203,11 +199,11 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             }
             i++;
             moved = 0;
-            SaveBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray, score1, score2);
+            SaveBoard(i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray, score1, score2);
         }
 
         PrintCoords(score1, score2, AllPengs, PengArray);
-        printf("Turn %d\n", TurnCounter(-1));
+        printf("Turn %d\n", i);
         printf("Press any key to go to next turn\n");
         getch();
     }

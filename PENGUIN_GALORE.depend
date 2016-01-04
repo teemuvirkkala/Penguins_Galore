@@ -42,10 +42,10 @@
 1449904582 source:d:\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapgenerator.c
 	"main.h"
 
-1451914683 source:c:\users\teemu\documents\github\penguins_galore\drawboard.c
+1451944738 source:c:\users\teemu\documents\github\penguins_galore\drawboard.c
 	"main.h"
 
-1451940129 c:\users\teemu\documents\github\penguins_galore\main.h
+1451944898 c:\users\teemu\documents\github\penguins_galore\main.h
 	<time.h>
 	<stdio.h>
 	<stdlib.h>
@@ -228,16 +228,16 @@
 1451897768 source:c:\users\teemu\documents\github\penguins_galore\introoutro.c
 	"main.h"
 
-1451939929 source:c:\users\teemu\documents\github\penguins_galore\menu.c
+1451943438 source:c:\users\teemu\documents\github\penguins_galore\menu.c
 	"main.h"
 
-1451939831 source:c:\users\teemu\documents\github\penguins_galore\playgame.c
+1451944985 source:c:\users\teemu\documents\github\penguins_galore\playgame.c
 	"main.h"
 
 1451915138 source:c:\users\teemu\documents\github\penguins_galore\score.c
 	"main.h"
 
-1451915457 source:c:\users\teemu\documents\github\penguins_galore\saveload.c
+1451944716 source:c:\users\teemu\documents\github\penguins_galore\saveload.c
 	"main.h"
 
 1451940294 source:c:\users\teemu\documents\github\penguins_galore\algorithms\dummy.c

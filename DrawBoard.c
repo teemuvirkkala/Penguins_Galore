@@ -96,15 +96,3 @@ void PrintCoords(int score1, int score2, int AllPengs, int PengArray[AllPengs][3
 
     SetConsoleTextAttribute(hConsole, 7);
 }
-
-int TurnCounter(int x) {
-    static int turn = 1;
-    if(x == 0) {
-        turn++;
-    } else if(x == -1) {
-        return turn;
-    } else {
-        turn = x;
-    }
-    return turn;
-}
