@@ -7,8 +7,8 @@
 # include <unistd.h>
 #elif defined _WIN32
 # include <windows.h>
-#define sleep(x) Sleep(1000 * x)
 #endif
+
 #define MAX_LEN 128 // for ascii printing
 
 #define TURNBYTURN_MODE
@@ -18,23 +18,22 @@
 easier to follow longer games, but still gives us the opportunity to see full output, windows only*/
 
 //Preaparation for pointers to functions
-typedef int (*Pointer)(int);
+typedef int (*Pointer)(int,int,int**,int,int**);
 
 //Commands for user//
-    //Moving//
-    void UserMoveNE (int ID, int Spaces);
-    void UserMoveE (int ID, int Spaces);
-    void UserMoveSE (int ID, int Spaces);
-    void UserMoveSW (int ID, int Spaces);
-    void UserMoveNW (int ID, int Spaces);
-    void UserMoveW (int ID, int Spaces);
+//Manual//
+int UserEnterDir(int i, int, int**, int, int**);
+int UserEnterCrdY(int i, int, int**, int, int**);
+int UserEnterCrdX(int i, int, int**, int, int**);
+int UserEnterNumOfSpaces(int i, int, int**, int, int**);
+int UserEnterPengID(int i, int, int**, int, int**);
 
-    //Manual//
-    int UserEnterDir(int i);
-    int UserEnterCrdY(int i);
-    int UserEnterCrdX(int i);
-    int UserEnterNumOfSpaces(int i);
-    int UserEnterPengID(int i);
+//Dummy
+int DummyDir(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
+int DummyCrdX(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
+int DummyCrdY(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
+int DummySpaces(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
+int DummyPengID(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 
 //BasicFunctions
 void PengCleaner(int AllPengs, int PengArray[AllPengs][3]);
@@ -47,7 +46,7 @@ void PosPeng2(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols],
 void Intro();
 int TurnCounter(int);
 void AsciiArtPrinter(FILE *fptr);
-int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer PointerSpaces1, Pointer PointerPengID1, Pointer PointerX2, Pointer PointerY2, Pointer PointerDir2, Pointer PointerSpaces2, Pointer PointerPengID2);
+int PlayGame(int P1ID, Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer PointerSpaces1, Pointer PointerPengID1, int P2ID, Pointer PointerX2, Pointer PointerY2, Pointer PointerDir2, Pointer PointerSpaces2, Pointer PointerPengID2);
 int Score (int, int, int, int NumOfCols, int FishArray[][NumOfCols]);
 
 //Saving and Loading
