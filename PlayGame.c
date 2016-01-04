@@ -19,18 +19,33 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             printf("Enter NumberOfColumns: \n");
             scanf("%i", &NumberOfColumns);
             NumberOfColumns += 2;
-
-            printf("Enter of penguins for each player: \n");
-            scanf("%i", &TempPengs);
-            AllPengs=TempPengs*2;
+            break;
+        }
+        case 2: {
+            NumberOfRows = LoadRoC(1);
+            NumberOfColumns = LoadRoC(2);
             break;
         }
         //case2
     }
 
+    printf("Enter of penguins for each player: \n");
+    scanf("%i", &TempPengs);
+    AllPengs = TempPengs * 2;
     int FishArray[NumberOfRows][NumberOfColumns]; //surrounded my 0 fishes floes
-    MapCleaner(NumberOfRows, NumberOfColumns, FishArray);
-    MapGenerator(NumberOfRows, NumberOfColumns, FishArray);
+
+    switch(i) {
+        case 1: {
+            MapCleaner(NumberOfRows, NumberOfColumns, FishArray);
+            MapGenerator(NumberOfRows, NumberOfColumns, FishArray);
+            break;
+        }
+        case 2: {
+            LoadBoard(NumberOfRows, NumberOfColumns, FishArray);
+            break;
+        }
+        //case2
+    }
 
     int PengArray[AllPengs][3]; /* Columns: AllPengs, x coord, y coord of penguin? So one row per penguin.
                                     AllPengs to check if the player is allowed to move the penguin */
@@ -55,6 +70,9 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             i++;
         } else {
             printf("You violated the rules! Try to place penguin again!\n");
+            Sleep(1000);
+            system ( "cls" );
+            DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
         }
     }
 
@@ -160,6 +178,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             }
             i++;
             moved = 0;
+            SaveBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
         }
 
         PrintCoords(score1, score2, AllPengs, PengArray);
