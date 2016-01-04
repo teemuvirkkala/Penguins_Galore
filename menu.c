@@ -41,9 +41,9 @@ int main() {
                             printf("You chose Dummy as Player1's algorithm!\n");
                             PointerX1 = &DummyCrdX;
                             PointerY1 = &DummyCrdY;
-                            PointerDir1 = &UserEnterDir;
-                            PointerSpaces1 = &UserEnterNumOfSpaces;
-                            PointerPengID1 = &UserEnterPengID;
+                            PointerDir1 = &DummyDir;
+                            PointerSpaces1 = &DummySpaces;
+                            PointerPengID1 = &DummyPengID;
                             i = 1;
                             break;
                         }
@@ -79,9 +79,9 @@ int main() {
                             printf("You chose Dummy as Player1's algorithm!\n");
                             PointerX2 = &DummyCrdX;
                             PointerY2 = &DummyCrdY;
-                            PointerDir2 = &UserEnterDir;
-                            PointerSpaces2 = &UserEnterNumOfSpaces;
-                            PointerPengID2 = &UserEnterPengID;
+                            PointerDir2 = &DummyDir;
+                            PointerSpaces2 = &DummySpaces;
+                            PointerPengID2 = &DummyPengID;
                             i = 1;
                             break;
                         }
