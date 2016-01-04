@@ -1,6 +1,6 @@
 #include "main.h"
 
-int SaveBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3], int score1, int score2) {
+int SaveBoard(int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3], int score1, int score2) {
 
     FILE *fp;
     int i, j;
@@ -10,7 +10,7 @@ int SaveBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols],
     if(fp == NULL) {
         return 0;
     }
-    fprintf(fp, "%d %d %d %d %d %d\n", NumOfRows, NumOfCols, AllPengs, TurnCounter(-1), score1, score2);
+    fprintf(fp, "%d %d %d %d %d %d\n", NumOfRows, NumOfCols, AllPengs, a, score1, score2);
 
     for(i = 0; i < NumOfRows; i++) {
         for(j = 0; j < NumOfCols; j++) {
