@@ -3,7 +3,7 @@
 int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer PointerSpaces1, Pointer PointerPengID1, Pointer PointerX2, Pointer PointerY2, Pointer PointerDir2, Pointer PointerSpaces2, Pointer PointerPengID2) {
 
     // initializations//
-    int NumberOfRows, NumberOfColumns, TempPengs, AllPengs, i, PengID, Spaces, Dir, X, Y, moved, idRow, score1 = 0, score2 = 0; //AllPengs should be the full amount of penguins in the future
+    int NumberOfRows, NumberOfColumns, AllPengs = 0, i, PengID, Spaces, Dir, X, Y, moved, idRow, score1 = 0, score2 = 0; //AllPengs should be the full amount of penguins in the future
     //Taking data from user//
     printf("Set board:");
     printf("\n1. Generate your own board");
@@ -24,15 +24,24 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
         case 2: {
             NumberOfRows = LoadRoC(1);
             NumberOfColumns = LoadRoC(2);
+            AllPengs = LoadRoC(3);
+            TurnCounter(LoadRoC(4));
+            score1 = LoadRoC(5);
+            score2 = LoadRoC(6);
             break;
         }
         //case2
     }
 
-    printf("Enter of penguins for each player: \n");
-    scanf("%i", &TempPengs);
-    AllPengs = TempPengs * 2;
+    if(AllPengs == 0) {
+        printf("Enter of penguins for each player: \n");
+        scanf("%i", &AllPengs);
+        AllPengs = AllPengs * 2;
+    }
+
     int FishArray[NumberOfRows][NumberOfColumns]; //surrounded my 0 fishes floes
+    int PengArray[AllPengs][3]; /* Columns: AllPengs, x coord, y coord of penguin? So one row per penguin.
+                                AllPengs to check if the player is allowed to move the penguin */
 
     switch(i) {
         case 1: {
@@ -41,46 +50,46 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             break;
         }
         case 2: {
-            LoadBoard(NumberOfRows, NumberOfColumns, FishArray);
+            LoadBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
             break;
         }
         //case2
     }
 
-    int PengArray[AllPengs][3]; /* Columns: AllPengs, x coord, y coord of penguin? So one row per penguin.
-                                    AllPengs to check if the player is allowed to move the penguin */
-    MapCleaner(AllPengs, 3, PengArray);
-    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    if(score1 == 0 && score2 == 0) {
+        MapCleaner(AllPengs, 3, PengArray);
+        DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
-    //Main loop should go here
-    //Manual loop//
-    i = 0;
-    //Peng placing
-    while(i < AllPengs) {
-        if(i % 2 == 0) {
-            X = PointerX1(i);
-            Y = PointerY1(i);
-        } else if(i % 2) {
-            X = PointerX2(i);
-            Y = PointerY2(i);
-        }
+        //Main loop should go here
+        //Manual loop//
+        i = 0;
+        //Peng placing
+        while(i < AllPengs) {
+            if(i % 2 == 0) {
+                X = PointerX1(i);
+                Y = PointerY1(i);
+            } else if(i % 2) {
+                X = PointerX2(i);
+                Y = PointerY2(i);
+            }
 
-        if(PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray) == 1) {
-            DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-            i++;
-        } else {
-            printf("You violated the rules! Try to place penguin again!\n");
-            Sleep(1000);
-            system ( "cls" );
-            DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+            if(PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray) == 1) {
+                DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                i++;
+            } else {
+                printf("You violated the rules! Try to place penguin again!\n");
+                Sleep(1000);
+                DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+            }
         }
     }
 
+    DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     PrintCoords(score1, score2, AllPengs, PengArray);
     #ifdef TURNBYTURN_MODE
-    printf("Turn %d\n", TurnCounter(0));
+    printf("Turn %d\n", TurnCounter(-1));
     #endif
-    i = 1;
+    i = TurnCounter(-1);
     moved = 0;
     //Moving
     while(CheckEnd(NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
@@ -168,21 +177,21 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
 
         if(moved == 1) {
             #ifdef TURNBYTURN_MODE
-            TurnCounter(1);
+            TurnCounter(0);
             #endif
             idRow = WhichPenguin(PengID, AllPengs, PengArray);
             if(i % 2) {
-                score1 = Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumberOfColumns, FishArray, PengArray);
+                score1 = Score(score1, PengArray[idRow][1], PengArray[idRow][2], NumberOfColumns, FishArray);
             } else if(i % 2 == 0) {
-                score2 = Score(AllPengs, idRow, PengArray[idRow][1], PengArray[idRow][2], NumberOfColumns, FishArray, PengArray);
+                score2 = Score(score2, PengArray[idRow][1], PengArray[idRow][2], NumberOfColumns, FishArray);
             }
             i++;
             moved = 0;
-            SaveBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+            SaveBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray, score1, score2);
         }
 
         PrintCoords(score1, score2, AllPengs, PengArray);
-        printf("Turn %d\n", TurnCounter(0));
+        printf("Turn %d\n", TurnCounter(-1));
         printf("Press any key to go to next turn\n");
         getch();
     }

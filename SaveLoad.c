@@ -1,7 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 
-int SaveBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int SaveBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3], int score1, int score2) {
 
     FILE *fp;
     int i, j;
@@ -11,11 +10,19 @@ int SaveBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols],
     if(fp == NULL) {
         return 0;
     }
-    fprintf(fp, "%d\ %d\n", NumOfRows, NumOfCols);
+    fprintf(fp, "%d %d %d %d %d %d\n", NumOfRows, NumOfCols, AllPengs, TurnCounter(-1), score1, score2);
 
     for(i = 0; i < NumOfRows; i++) {
         for(j = 0; j < NumOfCols; j++) {
             fx = FishArray[i][j];
+            fprintf(fp, "%d ", fx);
+        }
+        fprintf(fp, "\n");
+    }
+
+    for(i = 0; i < AllPengs; i++) {
+        for(j = 0; j < 3; j++) {
+            fx = PengArray[i][j];
             fprintf(fp, "%d ", fx);
         }
         fprintf(fp, "\n");
@@ -26,7 +33,7 @@ int SaveBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols],
     return 1;
 }
 
-int LoadBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]) {
+int LoadBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     FILE *fp;
     int i, j;
@@ -38,13 +45,23 @@ int LoadBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols])
         return 0;
     }
 
-    fscanf (fp, "%d", &buff); //To skip over row and col, board starts from 3rd line
-    fscanf (fp, "%d", &buff);
+    for(i = 0; i < 6; i++) { //To skip over the first line, board starts from 3rd line
+        fscanf (fp, "%d", &buff);
+    }
 
     for(i = 0; i < NumOfRows; i++) {
         for(j = 0; j < NumOfCols; j++) {
             fscanf (fp, "%d", &buff);
             FishArray[i][j] = buff;
+        }
+    }
+
+    if(AllPengs > 0) {
+        for(i = 0; i < AllPengs; i++) {
+            for(j = 0; j < 3; j++) {
+                fscanf (fp, "%d", &buff);
+                PengArray[i][j] = buff;
+            }
         }
     }
 
@@ -54,9 +71,10 @@ int LoadBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols])
 }
 
 int LoadRoC(int a) {
+    //1 rows, 2 cols, 3 penguins, 4 turn, 5 score1, 6 score2
 
     FILE *fp;
-    int output;
+    int output, i;
 
     fp = fopen("test.map", "r");
 
@@ -64,10 +82,7 @@ int LoadRoC(int a) {
         return 0;
     }
 
-    if(a == 1) { //To read number of rows
-        fscanf (fp, "%d", &output);
-    } else if(a == 2) { //To read the number of columns
-        fscanf (fp, "%d", &output);
+    for(i = 0; i < a; i++) {
         fscanf (fp, "%d", &output);
     }
 
