@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 
-int UserEnterCrdX(int i) {
+int UserEnterCrdX(int i, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -23,7 +23,7 @@ int UserEnterCrdX(int i) {
     return x;
 }
 
-int UserEnterCrdY(int i) {
+int UserEnterCrdY(int i, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -43,7 +43,7 @@ int UserEnterCrdY(int i) {
     return y;
 }
 
-int UserEnterNumOfSpaces(int i) {
+int UserEnterNumOfSpaces(int i, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -63,7 +63,7 @@ int UserEnterNumOfSpaces(int i) {
     return s;
 }
 
-int UserEnterDir(int i) {
+int UserEnterDir(int i, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -83,7 +83,7 @@ int UserEnterDir(int i) {
     return d;
 }
 
-int UserEnterPengID(int i) {
+int UserEnterPengID(int i, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);

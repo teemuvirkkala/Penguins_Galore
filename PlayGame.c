@@ -1,6 +1,6 @@
 #include "main.h"
 
-int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer PointerSpaces1, Pointer PointerPengID1, Pointer PointerX2, Pointer PointerY2, Pointer PointerDir2, Pointer PointerSpaces2, Pointer PointerPengID2) {
+int PlayGame(int P1ID, Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer PointerSpaces1, Pointer PointerPengID1, int P2ID, Pointer PointerX2, Pointer PointerY2, Pointer PointerDir2, Pointer PointerSpaces2, Pointer PointerPengID2) {
 
     // initializations//
     int NumberOfRows, NumberOfColumns, AllPengs = 0, i, PengID, Spaces, Dir, X, Y, moved, idRow, score1 = 0, score2 = 0; //AllPengs should be the full amount of penguins in the future
@@ -66,11 +66,21 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
         //Peng placing
         while(i < AllPengs) {
             if(i % 2 == 0) {
-                X = PointerX1(i);
-                Y = PointerY1(i);
+                if(P1ID == 1) {
+                    X = PointerX1(i, NumberOfColumns, FishArray, AllPengs, PengArray);
+                    Y = PointerY1(i, NumberOfColumns, FishArray, AllPengs, PengArray);
+                } else {
+                    X = PointerX1(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                    Y = PointerY1(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                }
             } else if(i % 2) {
-                X = PointerX2(i);
-                Y = PointerY2(i);
+                if(P2ID == 1) {
+                    X = PointerX2(i, NumberOfColumns, FishArray, AllPengs, PengArray);
+                    Y = PointerY2(i, NumberOfColumns, FishArray, AllPengs, PengArray);
+                } else {
+                    X = PointerX2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                    Y = PointerY2(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+                }
             }
 
             if(PosPeng(X, Y, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray) == 1) {
@@ -94,80 +104,79 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
     //Moving
     while(CheckEnd(NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
         if(i % 2) {
-            PengID = PointerPengID1(i);
+            PengID = PointerPengID1(i, NumberOfColumns, FishArray, AllPengs, PengArray);
         } else if(i % 2 == 0) {
-            PengID = PointerPengID2(i);
+            PengID = PointerPengID2(i, NumberOfColumns, FishArray, AllPengs, PengArray);
         }
 
         if (PengID % 2 == i % 2) {
             if(i % 2) {
-                Spaces = PointerSpaces1(i);
-                Dir = PointerDir1(i);
+                Spaces = PointerSpaces1(i, NumberOfColumns, FishArray, AllPengs, PengArray);
+                Dir = PointerDir1(i, NumberOfColumns, FishArray, AllPengs, PengArray);
             } else if(i % 2 == 0) {
-                Spaces = PointerSpaces2(i);
-                Dir = PointerDir2(i);
+                Spaces = PointerSpaces2(i, NumberOfColumns, FishArray, AllPengs, PengArray);
+                Dir = PointerDir2(i, NumberOfColumns, FishArray, AllPengs, PengArray);
             }
 
             switch(Dir) {
                 case 1: {
-                        //go NE
-                        if(MovePengNE(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)) {
-                            printf("\nYou moved to NE");
-                            moved = 1;
-                        } else
-                            printf("\nIllegal move!");
-                        break;
-                    }
+                    //go NE
+                    if(MovePengNE(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)) {
+                        printf("\nYou moved to NE");
+                        moved = 1;
+                    } else
+                        printf("\nIllegal move!");
+                    break;
+                }
                 case 2: {
-                        //go E
-                        if(MovePengE(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)) {
-                            printf("\nYou moved to E");
-                            moved = 1;
-                        } else
-                            printf("\nIllegal move!");
-                        break;
-                    }
+                    //go E
+                    if(MovePengE(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)) {
+                        printf("\nYou moved to E");
+                        moved = 1;
+                    } else
+                        printf("\nIllegal move!");
+                    break;
+                }
                 case 3: {
-                        //go SE
-                        if(MovePengSE(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)) {
-                           printf("\nYou moved to SE");
-                           moved = 1;
-                        } else
-                            printf("\nIllegal move!");
-                        break;
-                    }
+                    //go SE
+                    if(MovePengSE(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)) {
+                        printf("\nYou moved to SE");
+                        moved = 1;
+                    } else
+                        printf("\nIllegal move!");
+                    break;
+                }
                 case 4: {
-                        // go SW
-                        if(MovePengSW(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)) {
-                            printf("\nYou moved to SW");
-                            moved = 1;
-                        } else
-                            printf("\nIllegal move!");
-                        break;
-                    }
+                    // go SW
+                    if(MovePengSW(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)) {
+                        printf("\nYou moved to SW");
+                        moved = 1;
+                    } else
+                        printf("\nIllegal move!");
+                    break;
+                }
                 case 5: {
-                        // go W
-                        if(MovePengW(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)) {
-                            printf("\nYou moved to W");
-                            moved = 1;
-                        } else
-                            printf("\nIllegal move!");
-                        break;
-                    }
+                    // go W
+                    if(MovePengW(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)) {
+                        printf("\nYou moved to W");
+                        moved = 1;
+                    } else
+                        printf("\nIllegal move!");
+                    break;
+                }
                 case 6: {
-                        //go NW
-
-                        if(MovePengNW(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)) {
-                            printf("\nYou moved to NW");
-                            moved = 1;
-                        } else
-                            printf("\nIllegal move!");
-                        break;
-                    }
+                    //go NW
+                    if(MovePengNW(PengID, Spaces, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray)) {
+                        printf("\nYou moved to NW");
+                        moved = 1;
+                    } else
+                        printf("\nIllegal move!");
+                    break;
+                }
                 default: {
-                        printf("\nGive me the number one more time! ");
-                        break;
-                    }
+                    printf("\nGive me the number one more time! ");
+                    break;
+                }
             }
         } else {
             printf("\nYou chose wrong penguin! Try again!");
