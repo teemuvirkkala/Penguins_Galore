@@ -61,6 +61,9 @@
 		<Unit filename="PosPeng.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="SaveLoad.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Score.c">
 			<Option compilerVar="CC" />
 		</Unit>
