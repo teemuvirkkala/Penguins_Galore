@@ -62,13 +62,35 @@ int DummyDir(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[
 
 int DummyPengID(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
-    int PengID;
+    int i, j;
+
 
     if(a % 2) {
-        PengID = 1;
+        if(AllPengs == 2) {
+            return 1;
+        }
+        for(i = 0; i < AllPengs; i++) {
+            if(i % 2 == 0) {
+                for(j = 1; j <= 6; j++) {
+                    if(CheckMove(i, j, 1, NumOfCols, FishArray, AllPengs, PengArray)) {
+                        return ++i;
+                    }
+                }
+            }
+        }
     }else if(a % 2 == 0) {
-        PengID = 2;
+        if(AllPengs == 2) {
+            return 2;
+        }
+        for(i = 0; i < AllPengs; i++) {
+            if(i % 2) {
+                for(j = 1; j <= 6; j++) {
+                    if(CheckMove(i, j, 1, NumOfCols, FishArray, AllPengs, PengArray)) {
+                        return ++i;
+                    }
+                }
+            }
+        }
     }
-
-    return PengID;
+    return 0;
 }
