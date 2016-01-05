@@ -95,10 +95,11 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
     #ifdef TURNBYTURN_MODE
     printf("Turn %d\n", i);
     #endif
-    moved = 0;
     //Moving
     while(CheckEnd(0, NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
+        moved = 0;
         if(i % 2 && CheckEnd(1, NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
+            moved = 1;
             if(AllPengs == 2) {
                 PengID = 1;
             } else {
@@ -107,6 +108,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
                 PengID = PointerPengID1(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
             }
         } else if(i % 2 == 0 && CheckEnd(2, NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
+            moved = 1;
             if(AllPengs == 2) {
                 PengID = 2;
             } else {
@@ -118,7 +120,8 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             i++;
         }
 
-        if (PengID % 2 == i % 2) {
+        if (PengID % 2 == i % 2 && moved == 1) {
+            moved = 0;
             if(i % 2 && CheckEnd(1, NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
                 SetConsoleTextAttribute(hConsole, 14);
                 Spaces = PointerSpaces1(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
@@ -191,7 +194,8 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
                     break;
                 }
             }
-        } else {
+        } else if(moved == 1) {
+            moved = 0;
             printf("\nYou chose wrong penguin! Try again!");
         }
         Sleep(1000);
@@ -205,7 +209,6 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
                 score2 = Score(score2, PengArray[idRow][1], PengArray[idRow][2], NumberOfColumns, FishArray);
             }
             i++;
-            moved = 0;
             SaveBoard(i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray, score1, score2);
         }
 
