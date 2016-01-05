@@ -94,7 +94,7 @@ int CheckMove(int idRow, int Dir, int Spaces, int NumOfCols, int FishArray[][Num
             if(CheckTile(Row, Col, NumOfCols, FishArray, AllPengs, PengArray))
                 canMove = 1;
             else
-                canMove = 0;
+                return 0;
         }
     }
     return canMove;
