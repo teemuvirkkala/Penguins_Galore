@@ -24,6 +24,7 @@ int main() {
                     printf("Choose Player1's algorithm:\n");
                     printf("1. Manual Override\n");
                     printf("2. Dummy\n");
+                    printf("3. Center\n");
 
                     scanf("%i", &p);
                     switch(p) {
@@ -47,6 +48,16 @@ int main() {
                             i = 1;
                             break;
                         }
+                        case 3: {
+                            printf("You chose Center as Player1's algorithm!\n");
+                            PointerX1 = &CenterCrdX;
+                            PointerY1 = &CenterCrdY;
+                            PointerDir1 = &CenterDir;
+                            PointerSpaces1 = &CenterSpaces;
+                            PointerPengID1 = &CenterPengID;
+                            i = 1;
+                            break;
+                        }
                         default: {
                             printf("Set a proper parameter!\n");
                             break;
@@ -62,6 +73,7 @@ int main() {
                     printf("Choose Player2's algorithm:\n");
                     printf("1. Manual Override\n");
                     printf("2. Dummy\n");
+                    printf("3. Center\n");
 
                     scanf("%i", &p);
                     switch(p) {
@@ -76,12 +88,22 @@ int main() {
                             break;
                         }
                         case 2: {
-                            printf("You chose Dummy as Player1's algorithm!\n");
+                            printf("You chose Dummy as Player2's algorithm!\n");
                             PointerX2 = &DummyCrdX;
                             PointerY2 = &DummyCrdY;
                             PointerDir2 = &DummyDir;
                             PointerSpaces2 = &DummySpaces;
                             PointerPengID2 = &DummyPengID;
+                            i = 1;
+                            break;
+                        }
+                        case 3: {
+                            printf("You chose Center as Player2's algorithm!\n");
+                            PointerX2 = &CenterCrdX;
+                            PointerY2 = &CenterCrdY;
+                            PointerDir2 = &CenterDir;
+                            PointerSpaces2 = &CenterSpaces;
+                            PointerPengID2 = &CenterPengID;
                             i = 1;
                             break;
                         }
