@@ -1,6 +1,7 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <conio.h>
 
 #ifdef __unix__
@@ -49,9 +50,10 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
 int Score (int, int, int, int NumOfCols, int FishArray[][NumOfCols]);
 
 //Saving and Loading
-int SaveBoard(int i, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3], int, int);
-int LoadBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
-int LoadRoC(int);
+int SaveBoard(const char *file, int i, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3], int, int);
+int LoadBoard(const char *file, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
+int LoadRoC(const char *file, int);
+int FileExists(const char *file);
 
 //CheckingFunctions
 int CheckPeng(int, int, int AllPengs, int PengArray[AllPengs][3]);

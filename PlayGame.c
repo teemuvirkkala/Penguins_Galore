@@ -6,6 +6,9 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     int NumberOfRows, NumberOfColumns, AllPengs = 0, i, j, PengID = 0, Spaces = 0, Dir, X, Y, moved, idRow, score1 = 0, score2 = 0; //AllPengs should be the full amount of penguins in the future
+    char filename[128], name[128];
+    const char* ext = ".map";
+
     //Taking data from user//
     printf("Set board:");
     printf("\n1. Generate your own board");
@@ -21,15 +24,47 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             printf("Enter NumberOfColumns: \n");
             scanf("%i", &NumberOfColumns);
             NumberOfColumns += 2;
+
+            while(1) {
+                printf("Enter a filename for saving: \n");
+                scanf(" %s", name);
+                if(sizeof(filename) > strlen(name) + 1) {
+                    strncpy(filename, name, sizeof(filename));
+                    if(sizeof(filename) > (strlen(filename) + strlen(ext) + 1) ) {
+                        strncat(filename, ext, (sizeof(filename) - strlen(filename)));
+                        break;
+                    } else
+                        printf("Filename is too long!\n");
+                } else
+                    printf("Filename is too long!\n");
+            }
+
             break;
         }
         case 2: {
-            NumberOfRows = LoadRoC(1);
-            NumberOfColumns = LoadRoC(2);
-            AllPengs = LoadRoC(3);
-            i = LoadRoC(4);
-            score1 = LoadRoC(5);
-            score2 = LoadRoC(6);
+            while(1) {
+                printf("Enter a filename to be loaded: \n");
+                scanf(" %s", name);
+                if(sizeof(filename) > strlen(name) + 1) {
+                    strncpy(filename, name, sizeof(filename));
+                    if(sizeof(filename) > (strlen(filename) + strlen(ext) + 1)) {
+                        strncat(filename, ext, (sizeof(filename) - strlen(filename)));
+                        if(FileExists(filename)) {
+                            break;
+                        } else
+                            printf("The file doesn't exist!\n");
+                    } else
+                        printf("Filename is too long!\n");
+                } else
+                    printf("Filename is too long!\n");
+            }
+
+            NumberOfRows = LoadRoC(filename, 1);
+            NumberOfColumns = LoadRoC(filename, 2);
+            AllPengs = LoadRoC(filename, 3);
+            i = LoadRoC(filename, 4);
+            score1 = LoadRoC(filename, 5);
+            score2 = LoadRoC(filename, 6);
             break;
         }
     }
@@ -51,7 +86,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             break;
         }
         case 2: {
-            LoadBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+            LoadBoard(filename, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
             break;
         }
     }
@@ -208,7 +243,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
                 score2 = Score(score2, PengArray[idRow][1], PengArray[idRow][2], NumberOfColumns, FishArray);
             }
             i++;
-            SaveBoard(i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray, score1, score2);
+            SaveBoard(filename, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray, score1, score2);
         }
 
         PrintCoords(score1, score2, AllPengs, PengArray);
