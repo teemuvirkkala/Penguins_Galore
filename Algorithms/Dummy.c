@@ -64,7 +64,6 @@ int DummyPengID(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArr
 
     int i, j;
 
-
     if(a % 2) {
         if(AllPengs == 2) {
             return 1;
