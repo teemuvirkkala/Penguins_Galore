@@ -100,16 +100,33 @@ int CheckMove(int idRow, int Dir, int Spaces, int NumOfCols, int FishArray[][Num
     return canMove;
 }
 
-int CheckEnd(int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int CheckEnd(int a, int NumOfCols, int FishArray[][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
     int i, j, GameEnd;
 
     for(i = 0; i < AllPengs; i++) { //Check all the penguins
         for(j = 1; j <= 6; j++) { //Check all the directions for each penguin
-            if(CheckMove(i, j, 1, NumOfCols, FishArray, AllPengs, PengArray) == 1) {
-                return 0;
-
+            if(a == 1) {
+                if(i % 2 == 0) {
+                    if(CheckMove(i, j, 1, NumOfCols, FishArray, AllPengs, PengArray) == 1) {
+                        return 0;
+                    } else {
+                        GameEnd = 1;
+                    }
+                }
+            } else if(a == 2) {
+                if(i % 2) {
+                    if(CheckMove(i, j, 1, NumOfCols, FishArray, AllPengs, PengArray) == 1) {
+                        return 0;
+                    } else {
+                        GameEnd = 1;
+                    }
+                }
             } else {
-                GameEnd = 1;
+                    if(CheckMove(i, j, 1, NumOfCols, FishArray, AllPengs, PengArray) == 1) {
+                        return 0;
+                    } else {
+                        GameEnd = 1;
+                    }
             }
         }
     }
