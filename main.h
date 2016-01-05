@@ -44,7 +44,6 @@ int CenterSpaces(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishAr
 int CenterPengID(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 
 //BasicFunctions
-void PengCleaner(int AllPengs, int PengArray[AllPengs][3]);
 void MapGenerator(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]);
 void MapCleaner(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]);
 void PrintCoords(int, int, int AllPengs, int PengArray[AllPengs][3]);
