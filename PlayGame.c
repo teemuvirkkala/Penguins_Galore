@@ -120,7 +120,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             i++;
         }
 
-        if (PengID % 2 == i % 2 && moved == 1) {
+        if (PengID % 2 == i % 2 && moved == 1 && WhichPenguin(PengID, AllPengs, PengArray) != -1) {
             moved = 0;
             if(i % 2 && CheckEnd(1, NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
                 SetConsoleTextAttribute(hConsole, 14);
