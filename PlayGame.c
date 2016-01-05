@@ -5,14 +5,14 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
     // initializations//
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    int NumberOfRows, NumberOfColumns, AllPengs = 0, i, PengID = 0, Spaces = 0, Dir, X, Y, moved, idRow, score1 = 0, score2 = 0; //AllPengs should be the full amount of penguins in the future
+    int NumberOfRows, NumberOfColumns, AllPengs = 0, i, j, PengID = 0, Spaces = 0, Dir, X, Y, moved, idRow, score1 = 0, score2 = 0; //AllPengs should be the full amount of penguins in the future
     //Taking data from user//
     printf("Set board:");
     printf("\n1. Generate your own board");
     printf("\n2. Read board from file\n");
-    scanf("%i", &i);
+    scanf("%i", &j);
 
-    switch(i) {
+    switch(j) {
         case 1: {
             printf("\nEnter NumberOfRows: \n");
             scanf("%i", &NumberOfRows);
@@ -32,7 +32,6 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             score2 = LoadRoC(6);
             break;
         }
-        //case2
     }
 
     if(AllPengs == 0) {
@@ -45,7 +44,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
     int PengArray[AllPengs][3]; /* Columns: AllPengs, x coord, y coord of penguin? So one row per penguin.
                                 AllPengs to check if the player is allowed to move the penguin */
 
-    switch(i) {
+    switch(j) {
         case 1: {
             MapCleaner(NumberOfRows, NumberOfColumns, FishArray);
             MapGenerator(NumberOfRows, NumberOfColumns, FishArray);
