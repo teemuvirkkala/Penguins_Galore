@@ -1,12 +1,12 @@
 #include "main.h"
 
-int SaveBoard(int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3], int score1, int score2) {
+int SaveBoard(const char *file, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3], int score1, int score2) {
 
     FILE *fp;
     int i, j;
     int fx;
+    fp = fopen(file, "w");
 
-    fp = fopen("test.map", "w");
     if(fp == NULL) {
         return 0;
     }
@@ -33,13 +33,12 @@ int SaveBoard(int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumO
     return 1;
 }
 
-int LoadBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
+int LoadBoard(const char *file, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]) {
 
     FILE *fp;
     int i, j;
     int buff;
-
-    fp = fopen("test.map", "r");
+    fp = fopen(file, "r");
 
     if(fp == NULL) {
         return 0;
@@ -70,13 +69,12 @@ int LoadBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols],
     return 1;
 }
 
-int LoadRoC(int a) {
+int LoadRoC(const char *file, int a) {
     //1 rows, 2 cols, 3 penguins, 4 turn, 5 score1, 6 score2
 
     FILE *fp;
     int output, i;
-
-    fp = fopen("test.map", "r");
+    fp = fopen(file, "r");
 
     if(fp == NULL) {
         return 0;
@@ -89,6 +87,15 @@ int LoadRoC(int a) {
     fclose(fp);
 
     return output;
+}
+
+int FileExists(const char *file) {
+
+   FILE *fp;
+   fp = fopen(file, "r");
+   if (fp != NULL) fclose (fp);
+
+   return (fp != NULL);
 }
 
 
