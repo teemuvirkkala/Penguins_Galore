@@ -97,26 +97,34 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
     #endif
     moved = 0;
     //Moving
-    while(CheckEnd(NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
-        if(i % 2) {
-            SetConsoleTextAttribute(hConsole, 14);
-            printf("Player1\n");
-            PengID = PointerPengID1(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-        } else if(i % 2 == 0) {
-            SetConsoleTextAttribute(hConsole, 12);
-            printf("Player2\n");
-            PengID = PointerPengID2(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+    while(CheckEnd(0, NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
+        if(i % 2 && CheckEnd(1, NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
+            if(AllPengs == 2) {
+                PengID = 1;
+            } else {
+                SetConsoleTextAttribute(hConsole, 14);
+                printf("Player1\n");
+                PengID = PointerPengID1(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+            }
+        } else if(i % 2 == 0 && CheckEnd(2, NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
+            if(AllPengs == 2) {
+                PengID = 2;
+            } else {
+                SetConsoleTextAttribute(hConsole, 12);
+                printf("Player2\n");
+                PengID = PointerPengID2(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
+            }
+        } else {
+            i++;
         }
 
         if (PengID % 2 == i % 2) {
-            if(i % 2) {
+            if(i % 2 && CheckEnd(1, NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
                 SetConsoleTextAttribute(hConsole, 14);
-                printf("Player1\n");
                 Spaces = PointerSpaces1(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
                 Dir = PointerDir1(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
-            } else if(i % 2 == 0) {
+            } else if(i % 2 == 0 && CheckEnd(2, NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
                 SetConsoleTextAttribute(hConsole, 12);
-                printf("Player2\n");
                 Spaces = PointerSpaces2(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
                 Dir = PointerDir2(Spaces, PengID, i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
             }
@@ -207,7 +215,6 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
         getch();
     }
 
-    system ( "cls" );
     if (score1 > score2)
         printf("Player1 won! with %i points!", score1);
     else if(score1 == score2)
