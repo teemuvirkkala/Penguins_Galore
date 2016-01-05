@@ -21,7 +21,6 @@ int MovePengNE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
                 (PengArray[idRow][2])++; //Y += 1
             } else {
                 (PengArray[idRow][1])--; //X -= 1
-
             }
         }
         IfMoved = 1;
@@ -62,7 +61,7 @@ int MovePengSE(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
                 (PengArray[idRow][1])++; //X += 1
                 (PengArray[idRow][2])++; //Y += 1
             } else {
-                (PengArray[idRow][1])++; //Y += 1
+                (PengArray[idRow][1])++; //X += 1
             }
         }
         IfMoved = 1;
@@ -86,7 +85,7 @@ int MovePengSW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
                 (PengArray[idRow][1])++; //X += 1
                 (PengArray[idRow][2])--; //Y -= 1
             } else {
-                (PengArray[idRow][1])++; //Y += 1
+                (PengArray[idRow][1])++; //X += 1
             }
         }
         IfMoved = 1;
@@ -120,13 +119,12 @@ int MovePengNW(int ID, int Spaces, int NumOfRows, int NumOfCols, int FishArray[N
     Col = PengArray[idRow][2];
 
     if(CheckMove(idRow, 6, Spaces, NumOfCols, FishArray, AllPengs, PengArray)) {
-
         for(i = 0; i < Spaces; i++) {
             if(PengArray[idRow][1] % 2 == 0) {
                 (PengArray[idRow][1])--; //X -= 1
                 (PengArray[idRow][2])--; //Y -= 1
             } else {
-                (PengArray[idRow][1])--; //Y += 1
+                (PengArray[idRow][1])--; //X -= 1
             }
         }
         IfMoved=1;
