@@ -41,7 +41,7 @@ int CheckMove(int idRow, int Dir, int Spaces, int NumOfCols, int FishArray[][Num
     Col = PengArray[idRow][2];
 
     for(i = 0; i < Spaces; i++) {
-        if(Row % 2) {
+        if(Row % 2 == 1) {
             switch(Dir) { //Default the switch to what?
                 case 1: //NE
                     Row--;

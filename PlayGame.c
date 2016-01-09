@@ -81,7 +81,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
 
     switch(j) {
         case 1: {
-            MapCleaner(NumberOfRows, NumberOfColumns, FishArray);
+            Cleaner(NumberOfRows, NumberOfColumns, FishArray);
             MapGenerator(NumberOfRows, NumberOfColumns, FishArray);
             break;
         }
@@ -92,7 +92,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
     }
 
     if(score1 == 0 && score2 == 0) {
-        MapCleaner(AllPengs, 3, PengArray);
+        Cleaner(AllPengs, 3, PengArray);
         DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
         //Manual loop//
@@ -249,7 +249,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
         PrintCoords(score1, score2, AllPengs, PengArray);
         printf("Turn %d\n", i);
         printf("Press any key to go to next turn\n");
-        getch();
+        Sleep(100);
     }
 
     if (score1 > score2)

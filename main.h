@@ -45,7 +45,7 @@ int CenterPengID(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishAr
 
 //BasicFunctions
 void MapGenerator(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]);
-void MapCleaner(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]);
+void Cleaner(int iLimit, int jLimit, int Array[iLimit][jLimit]);
 void PrintCoords(int, int, int AllPengs, int PengArray[AllPengs][3]);
 void DrawBoard(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 int PosPeng(int, int, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
