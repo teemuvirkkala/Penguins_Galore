@@ -37,6 +37,9 @@
 		<Unit filename="Algorithms/Dummy.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Algorithms/JulianTian.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Algorithms/ManualOverride.c">
 			<Option compilerVar="CC" />
 		</Unit>

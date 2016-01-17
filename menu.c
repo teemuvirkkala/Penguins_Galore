@@ -25,6 +25,7 @@ int main() {
                     printf("1. Manual Override\n");
                     printf("2. Dummy\n");
                     printf("3. Center\n");
+                    printf("4. Julian Tian's algorithm\n");
 
                     scanf("%i", &p);
                     switch(p) {
@@ -58,6 +59,16 @@ int main() {
                             i = 1;
                             break;
                         }
+                        case 4: {
+                            printf("You chose Julian Tian's algorithm as Player1's algorithm!\n");
+                            PointerX1 = &JulianCrdX;
+                            PointerY1 = &JulianCrdY;
+                            PointerDir1 = &JulianDir;
+                            PointerSpaces1 = &JulianSpaces;
+                            PointerPengID1 = &JulianPengID;
+                            i = 1;
+                            break;
+                        }
                         default: {
                             printf("Set a proper parameter!\n");
                             break;
@@ -74,6 +85,7 @@ int main() {
                     printf("1. Manual Override\n");
                     printf("2. Dummy\n");
                     printf("3. Center\n");
+                    printf("4. Julian Tian's algorithm\n");
 
                     scanf("%i", &p);
                     switch(p) {
@@ -104,6 +116,16 @@ int main() {
                             PointerDir2 = &CenterDir;
                             PointerSpaces2 = &CenterSpaces;
                             PointerPengID2 = &CenterPengID;
+                            i = 1;
+                            break;
+                        }
+                        case 4: {
+                            printf("You chose Julian Tian's algorithm as Player1's algorithm!\n");
+                            PointerX2 = &JulianCrdX;
+                            PointerY2 = &JulianCrdY;
+                            PointerDir2 = &JulianDir;
+                            PointerSpaces2 = &JulianSpaces;
+                            PointerPengID2 = &JulianPengID;
                             i = 1;
                             break;
                         }
