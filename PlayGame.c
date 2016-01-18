@@ -6,7 +6,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     int NumberOfRows, NumberOfColumns, AllPengs = 0, i, j, PengID = 0, Spaces = 0, Dir, X, Y, moved, idRow, score1 = 0, score2 = 0; //AllPengs should be the full amount of penguins in the future
-    int failsafe = 0;
+    int failsafe = 0, endsafe = 0;
     char filename[128], name[128];
     const char* ext = ".map";
 
@@ -64,7 +64,6 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
     int FishArray[NumberOfRows][NumberOfColumns]; //surrounded my 0 fishes floes
     int PengArray[AllPengs][3]; /* Columns: AllPengs, x coord, y coord of penguin? So one row per penguin.
                                 AllPengs to check if the player is allowed to move the penguin */
-
     switch(j) {
         case 1: {
             Cleaner(NumberOfRows, NumberOfColumns, FishArray);
@@ -162,6 +161,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
                         if(failsafe == 10) {
                             i++;
                             failsafe = 0;
+                            endsafe++;
                         }
                         failsafe++;
                     }
@@ -177,6 +177,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
                         if(failsafe == 10) {
                             i++;
                             failsafe = 0;
+                            endsafe++;
                         }
                         failsafe++;
                     }
@@ -192,6 +193,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
                         if(failsafe == 10) {
                             i++;
                             failsafe = 0;
+                            endsafe++;
                         }
                         failsafe++;
                     }
@@ -207,6 +209,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
                         if(failsafe == 10) {
                             i++;
                             failsafe = 0;
+                            endsafe++;
                         }
                         failsafe++;
                     }
@@ -222,6 +225,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
                         if(failsafe == 10) {
                             i++;
                             failsafe = 0;
+                            endsafe++;
                         }
                         failsafe++;
                     }
@@ -237,6 +241,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
                         if(failsafe == 10) {
                             i++;
                             failsafe = 0;
+                            endsafe++;
                         }
                         failsafe++;
                     }
@@ -254,6 +259,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
         DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
         if(moved == 1) {
+            endsafe = 0;
             idRow = WhichPenguin(PengID, AllPengs, PengArray);
             if(i % 2) {
                 score1 = Score(score1, PengArray[idRow][1], PengArray[idRow][2], NumberOfColumns, FishArray);
@@ -263,6 +269,8 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             i++;
             SaveBoard("game.map", i, NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray, score1, score2);
         }
+        if(endsafe == 10)
+            break; //Jump to game end if no one has moved for 10 turns
 
         PrintCoords(score1, score2, AllPengs, PengArray);
         printf("Turn %d\n", i);
