@@ -19,13 +19,14 @@ int main() {
                 printf("Set game parameters now!");
 
                 while(i == 0) {
-                    Sleep(1000);
+                    Sleep(700);
                     system ( "cls" );
                     printf("Choose Player1's algorithm:\n");
                     printf("1. Manual Override\n");
                     printf("2. Dummy\n");
                     printf("3. Center\n");
                     printf("4. Julian Tian's algorithm\n");
+                    printf("112. Bator\n");
 
                     scanf("%i", &p);
                     switch(p) {
@@ -69,6 +70,16 @@ int main() {
                             i = 1;
                             break;
                         }
+                        case 112: {
+                            printf("Bator");
+                            PointerX1 = &NightmareCrdX;
+                            PointerY1 = &NightmareCrdY;
+                            PointerDir1 = &DummyDir;
+                            PointerSpaces1 = &DummySpaces;
+                            PointerPengID1 = &DummyPengID;
+                            i = 1;
+                            break;
+                        }
                         default: {
                             printf("Set a proper parameter!\n");
                             break;
@@ -79,13 +90,14 @@ int main() {
                 i = 0;
 
                 while(i == 0) {
-                    Sleep(1000);
+                    Sleep(700);
                     system ( "cls" );
                     printf("Choose Player2's algorithm:\n");
                     printf("1. Manual Override\n");
                     printf("2. Dummy\n");
                     printf("3. Center\n");
                     printf("4. Julian Tian's algorithm\n");
+                    printf("112. Bator\n");
 
                     scanf("%i", &p);
                     switch(p) {
@@ -129,13 +141,23 @@ int main() {
                             i = 1;
                             break;
                         }
+                        case 112: {
+                            printf("Bator");
+                            PointerX1 = &NightmareCrdX;
+                            PointerY1 = &NightmareCrdY;
+                            PointerDir1 = &DummyDir;
+                            PointerSpaces1 = &DummySpaces;
+                            PointerPengID1 = &DummyPengID;
+                            i = 1;
+                            break;
+                        }
                         default: {
                             printf("Set a proper parameter!\n");
                             break;
                         }
                     }
                 }
-                Sleep(1000);
+                Sleep(700);
                 system ( "cls" );
 
                 //run game

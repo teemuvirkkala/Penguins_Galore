@@ -117,7 +117,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             } else {
                 SetConsoleTextAttribute(hConsole, 7);
                 printf("You violated the rules! Try to place penguin again!\n");
-                Sleep(1000);
+                Sleep(700);
                 DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
             }
         }
@@ -126,10 +126,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
 
     DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
     PrintCoords(score1, score2, AllPengs, PengArray);
-    #ifdef TURNBYTURN_MODE
     printf("Turn %d\n", i);
-    #endif
-    //Moving
     while(CheckEnd(0, NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
         moved = 0;
         if(i % 2 && CheckEnd(1, NumberOfColumns, FishArray, AllPengs, PengArray) == 0) {
@@ -232,7 +229,6 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
             moved = 0;
             printf("\nYou chose wrong penguin! Try again!");
         }
-        Sleep(1000);
         DrawBoard(NumberOfRows, NumberOfColumns, FishArray, AllPengs, PengArray);
 
         if(moved == 1) {
@@ -248,8 +244,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
 
         PrintCoords(score1, score2, AllPengs, PengArray);
         printf("Turn %d\n", i);
-        printf("Press any key to go to next turn\n");
-        Sleep(100);
+        Sleep(700);
     }
 
     if (score1 > score2)
@@ -259,6 +254,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
     else
         printf("Player2 won! with %i points!", score2);
     printf("\nGame OVER!");
+    getch();
     exit(0);
 }
 

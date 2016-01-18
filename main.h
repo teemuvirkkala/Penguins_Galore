@@ -12,12 +12,6 @@
 
 #define MAX_LEN 128 // for ascii printing
 
-#define TURNBYTURN_MODE
-//#define DEBUG_MODE
-
-/*TURNBYTURN_MODE, Wait the player to press anything every DrawScreen() and clear the screen,
-easier to follow longer games, but still gives us the opportunity to see full output, windows only*/
-
 //Preaparation for pointers to functions
 typedef int (*Pointer)(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 
@@ -50,6 +44,9 @@ int JulianCrdY(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArra
 int JulianSpaces(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 int JulianPengID(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
 
+//Bator
+int NightmareCrdX(int Spaces, int PengID, int Turn, int NumberOfRows, int NumberOfColumns, int FishArray[NumberOfRows][NumberOfColumns], int AllPengs, int PengArray[AllPengs][3]);
+int NightmareCrdY(int Spaces, int PengID, int Turn, int NumberOfRows, int NumberOfColumns, int FishArray[NumberOfRows][NumberOfColumns], int AllPengs, int PengArray[AllPengs][3]);
 
 //BasicFunctions
 void MapGenerator(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]);
