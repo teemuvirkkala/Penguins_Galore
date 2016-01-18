@@ -45,7 +45,7 @@
 1453145790 source:c:\users\teemu\documents\github\penguins_galore\drawboard.c
 	"main.h"
 
-1453145671 c:\users\teemu\documents\github\penguins_galore\main.h
+1453151021 c:\users\teemu\documents\github\penguins_galore\main.h
 	<time.h>
 	<stdio.h>
 	<stdlib.h>
@@ -66,7 +66,7 @@
 1452025070 source:c:\users\teemu\documents\github\penguins_galore\movepeng.c
 	"main.h"
 
-1453038747 source:c:\users\teemu\documents\github\penguins_galore\checkpeng.c
+1453151045 source:c:\users\teemu\documents\github\penguins_galore\checkpeng.c
 	"main.h"
 
 1449904582 source:c:\users\micha³\dropbox\private\dokumenty dropbox\studia\informatyka\github\penguins_galore\mapgenerator.c
@@ -233,7 +233,7 @@
 1453145716 source:c:\users\teemu\documents\github\penguins_galore\menu.c
 	"main.h"
 
-1453146828 source:c:\users\teemu\documents\github\penguins_galore\playgame.c
+1453151329 source:c:\users\teemu\documents\github\penguins_galore\playgame.c
 	"main.h"
 
 1452012192 source:c:\users\teemu\documents\github\penguins_galore\score.c

@@ -260,6 +260,7 @@ int PlayGame(Pointer PointerX1, Pointer PointerY1, Pointer PointerDir1, Pointer 
 
         if(moved == 1) {
             endsafe = 0;
+            failsafe = 0;
             idRow = WhichPenguin(PengID, AllPengs, PengArray);
             if(i % 2) {
                 score1 = Score(score1, PengArray[idRow][1], PengArray[idRow][2], NumberOfColumns, FishArray);
