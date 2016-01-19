@@ -26,7 +26,8 @@ int main() {
                     printf("2. Dummy\n");
                     printf("3. Center\n");
                     printf("4. Julian Tian's algorithm\n");
-                    printf("112. Bator\n");
+                    printf("5. Bator\n");
+                    printf("6. Teemu\n");
 
                     scanf("%i", &p);
                     switch(p) {
@@ -70,13 +71,23 @@ int main() {
                             i = 1;
                             break;
                         }
-                        case 112: {
+                        case 5: {
                             printf("Bator");
                             PointerX1 = &NightmareCrdX;
                             PointerY1 = &NightmareCrdY;
                             PointerDir1 = &DummyDir;
                             PointerSpaces1 = &DummySpaces;
                             PointerPengID1 = &DummyPengID;
+                            i = 1;
+                            break;
+                        }
+                        case 6: {
+                            printf("Teemu");
+                            PointerX1 = &TeemuCrdX;
+                            PointerY1 = &TeemuCrdY;
+                            PointerDir1 = &TeemuDir;
+                            PointerSpaces1 = &TeemuSpaces;
+                            PointerPengID1 = &TeemuPengID;
                             i = 1;
                             break;
                         }
@@ -97,7 +108,8 @@ int main() {
                     printf("2. Dummy\n");
                     printf("3. Center\n");
                     printf("4. Julian Tian's algorithm\n");
-                    printf("112. Bator\n");
+                    printf("5. Bator\n");
+                    printf("6. Teemu\n");
 
                     scanf("%i", &p);
                     switch(p) {
@@ -141,13 +153,23 @@ int main() {
                             i = 1;
                             break;
                         }
-                        case 112: {
+                        case 5: {
                             printf("Bator");
                             PointerX1 = &NightmareCrdX;
                             PointerY1 = &NightmareCrdY;
                             PointerDir1 = &DummyDir;
                             PointerSpaces1 = &DummySpaces;
                             PointerPengID1 = &DummyPengID;
+                            i = 1;
+                            break;
+                        }
+                        case 6: {
+                            printf("Teemu");
+                            PointerX1 = &TeemuCrdX;
+                            PointerY1 = &TeemuCrdY;
+                            PointerDir1 = &TeemuDir;
+                            PointerSpaces1 = &TeemuSpaces;
+                            PointerPengID1 = &TeemuPengID;
                             i = 1;
                             break;
                         }

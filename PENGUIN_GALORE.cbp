@@ -46,6 +46,9 @@
 		<Unit filename="Algorithms/ManualOverride.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Algorithms/TeemuVirkkala.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Algorithms/user.h" />
 		<Unit filename="AsciiPrinting.c">
 			<Option compilerVar="CC" />

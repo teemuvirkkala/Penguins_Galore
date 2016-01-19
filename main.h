@@ -48,6 +48,13 @@ int JulianPengID(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishAr
 int NightmareCrdX(int Spaces, int PengID, int Turn, int NumberOfRows, int NumberOfColumns, int FishArray[NumberOfRows][NumberOfColumns], int AllPengs, int PengArray[AllPengs][3]);
 int NightmareCrdY(int Spaces, int PengID, int Turn, int NumberOfRows, int NumberOfColumns, int FishArray[NumberOfRows][NumberOfColumns], int AllPengs, int PengArray[AllPengs][3]);
 
+//Functions from Teemu Virkkala's algorithm
+int TeemuDir(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
+int TeemuCrdX(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
+int TeemuCrdY(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
+int TeemuSpaces(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
+int TeemuPengID(int s, int PID, int a, int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols], int AllPengs, int PengArray[AllPengs][3]);
+
 //BasicFunctions
 void MapGenerator(int NumOfRows, int NumOfCols, int FishArray[NumOfRows][NumOfCols]);
 void Cleaner(int iLimit, int jLimit, int Array[iLimit][jLimit]);

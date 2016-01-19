@@ -45,7 +45,7 @@
 1453145790 source:c:\users\teemu\documents\github\penguins_galore\drawboard.c
 	"main.h"
 
-1453151021 c:\users\teemu\documents\github\penguins_galore\main.h
+1453234438 c:\users\teemu\documents\github\penguins_galore\main.h
 	<time.h>
 	<stdio.h>
 	<stdlib.h>
@@ -230,10 +230,10 @@
 1451897768 source:c:\users\teemu\documents\github\penguins_galore\introoutro.c
 	"main.h"
 
-1453145716 source:c:\users\teemu\documents\github\penguins_galore\menu.c
+1453234582 source:c:\users\teemu\documents\github\penguins_galore\menu.c
 	"main.h"
 
-1453151329 source:c:\users\teemu\documents\github\penguins_galore\playgame.c
+1453152193 source:c:\users\teemu\documents\github\penguins_galore\playgame.c
 	"main.h"
 
 1452012192 source:c:\users\teemu\documents\github\penguins_galore\score.c
@@ -342,4 +342,8 @@
 
 1453145172 source:c:\users\teemu\documents\github\penguins_galore\algorithms\bator.c
 	"user.h"
+
+1453238153 source:c:\users\teemu\documents\github\penguins_galore\algorithms\teemuvirkkala.c
+	"user.h"
+	<stdio.h>
 
