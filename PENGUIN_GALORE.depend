@@ -45,7 +45,7 @@
 1453145790 source:c:\users\teemu\documents\github\penguins_galore\drawboard.c
 	"main.h"
 
-1453234438 c:\users\teemu\documents\github\penguins_galore\main.h
+1453309355 c:\users\teemu\documents\github\penguins_galore\main.h
 	<time.h>
 	<stdio.h>
 	<stdlib.h>
@@ -343,7 +343,7 @@
 1453145172 source:c:\users\teemu\documents\github\penguins_galore\algorithms\bator.c
 	"user.h"
 
-1453238153 source:c:\users\teemu\documents\github\penguins_galore\algorithms\teemuvirkkala.c
+1453309152 source:c:\users\teemu\documents\github\penguins_galore\algorithms\teemuvirkkala.c
 	"user.h"
 	<stdio.h>
 
